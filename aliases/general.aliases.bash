@@ -1,4 +1,3 @@
-
 alias reload='source ~/.bashrc && echo "sourced ~/.bashrc"'
 
 # Directory
