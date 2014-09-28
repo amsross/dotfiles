@@ -4,6 +4,12 @@ echo "$path"
 source $path/theme/prompt.sh
 source $path/completions/ssh.completion.bash
 
+if [ ! -f "$HOME/.gitconfig" ];
+then
+	echo "has no config"
+	ln -s "$path/.gitconfig" $HOME/.gitconfig
+fi
+
 export CLICOLOR=1
 export EDITOR='vim -f'
 export HISTFILESIZE=10000
