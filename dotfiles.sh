@@ -4,6 +4,7 @@ echo "$path"
 source $path/theme/prompt.sh
 source $path/completions/ssh.completion.bash
 
+export CLICOLOR=1
 export EDITOR='vim -f'
 export HISTFILESIZE=10000
 export HISTSIZE=10000
