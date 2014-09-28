@@ -1,0 +1,25 @@
+[user]
+	name = Matt Ross
+[github]
+	user = amsross
+[color]
+	ui = auto
+[alias]
+	st = status
+	di = diff
+	ci = commit
+	br = branch
+	llog = log --date=local
+[rerere]
+	enabled = true
+[pull]
+        rebase = false
+        default = matching
+[push]
+        default = matching
+[user]
+        name = Matt Ross
+[core]
+	autocrlf = true
+        filemode = false
+
