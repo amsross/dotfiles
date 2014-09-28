@@ -8,10 +8,6 @@ alias ls='ls -hBGlah -F --color --show-control-chars'
 alias ll='ls'
 alias lsd='ls -l ${colorflag} | grep "^d"'
 
-alias grep='grep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
-
 alias md='mkdir -p'
 alias rd='rmdir'
 
