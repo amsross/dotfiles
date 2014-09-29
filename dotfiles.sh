@@ -1,12 +1,13 @@
 path="$HOME/dotfiles"
-echo "$path"
+#echo "$path"
 
 source $path/theme/prompt.sh
 source $path/completions/ssh.completion.bash
 
 if [ ! -f "$HOME/.gitconfig" ];
 then
-	echo "has no config"
+	#echo ""
+	#echo "loading default gitconfig"
 	ln -s "$path/.gitconfig" $HOME/.gitconfig
 fi
 
@@ -35,10 +36,10 @@ function load_all() {
 	done
 }
 
-echo ""
-echo "loading aliases"
+#echo ""
+#echo "loading aliases"
 load_all aliases
 
-echo ""
-echo "loading completions"
+#echo ""
+#echo "loading completions"
 load_all completions
