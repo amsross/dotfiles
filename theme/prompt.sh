@@ -77,7 +77,11 @@ Time12h="\T"
 Time12a="\@"
 PathShort="\w"
 PathFull="\W"
-NewLine="\n"
+NewLin=e"\n"
 Jobs="\j"
 
-export PS1=$Time12h' \[\033[01;32m\]\h\[\033[01;37m\] \w\[\033[1;33m\]$(__git_ps1 "(%s)") \[\033[01;37m\]$\[\033[00m\] '
+#with username
+export PS1=$Time12h' \[\033[0;33m\]\u\[\033[0;31m\]@\[\033[01;32m\]\h\[\033[01;37m\] \w\[\033[1;33m\]$(__git_ps1 "(%s)") \[\033[01;37m\]$\[\033[00m\] '
+
+#without username
+#export PS1=$Time12h' \[\033[01;32m\]\h\[\033[01;37m\] \w\[\033[1;33m\]$(__git_ps1 "(%s)") \[\033[01;37m\]$\[\033[00m\] '
