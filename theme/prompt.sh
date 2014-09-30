@@ -77,7 +77,7 @@ Time12h="\T"
 Time12a="\@"
 PathShort="\w"
 PathFull="\W"
-NewLin=e"\n"
+NewLine="\n"
 Jobs="\j"
 
 #with username
