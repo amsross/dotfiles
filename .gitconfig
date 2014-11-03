@@ -17,8 +17,6 @@
         default = matching
 [push]
         default = matching
-[user]
-        name = Matt Ross
 [core]
 	autocrlf = true
         filemode = false
