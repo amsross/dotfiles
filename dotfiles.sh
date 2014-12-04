@@ -2,7 +2,6 @@ path="$HOME/dotfiles"
 #echo "$path"
 
 source $path/theme/prompt.sh
-source $path/completions/ssh.completion.bash
 
 if [ ! -f "$HOME/.gitconfig" ];
 then
