@@ -34,10 +34,6 @@ alias m="mate ."
 alias s="sb"
 alias o="open"
 alias oo="open ."
-alias clear="clsb"
-alias c='clear'
-alias k='clear'
-alias cls='clear'
 alias q='exit'
 
 
