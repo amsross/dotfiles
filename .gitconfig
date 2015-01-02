@@ -18,6 +18,6 @@
 [push]
         default = matching
 [core]
-	autocrlf = true
+	autocrlf = false
         filemode = false
 
