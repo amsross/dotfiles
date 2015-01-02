@@ -2,6 +2,8 @@ path="$HOME/dotfiles"
 #echo "$path"
 
 source $path/theme/prompt.sh
+#$include /etc/inputrc
+set mark-symlinked-directories on
 
 if [ ! -f "$HOME/.gitconfig" ];
 then
