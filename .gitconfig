@@ -20,4 +20,5 @@
 [core]
 	autocrlf = false
         filemode = false
-
+[push]
+	default = simple
