@@ -15,8 +15,6 @@
 [pull]
         rebase = false
         default = matching
-[push]
-        default = matching
 [core]
 	autocrlf = false
         filemode = false
