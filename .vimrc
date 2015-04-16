@@ -1,9 +1,13 @@
 execute pathogen#infect()
-syntax on
+syntax enable
+set background=dark
+colorscheme solarized
+
 filetype plugin indent on
 set autoindent
 set backspace=indent,eol,start
 set path=.,,*
+
 nnoremap <f6> :tabp<return>
 nnoremap <f7> :tabe 
 nnoremap <f8> :tabn<return>
