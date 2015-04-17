@@ -1,14 +1,33 @@
 echo "" >> ~/.bashrc
 echo "source $(pwd)/dotfiles.sh" >> ~/.bashrc
 
-mv ~/.gitconfig ~/.gitconfig.bak
-ln -s $(pwd)/.gitconfig ~/.gitconfig
+if [ ! -f "$HOME/.gitconfig" ];
+then
+	echo ""
+	echo "backing up ~/.gitconfig"
+	mv ~/.gitconfig ~/.gitconfig.bak
+fi
 
-mv ~/.vimrc ~/.vimrc.bak
-ln -s $(pwd)/.vimrc ~/.vimrc
+if [ ! -f "$HOME/.vimrc" ];
+then
+	echo ""
+	echo "backing up ~/.vimrc"
+	mv ~/.vimrc ~/.vimrc.bak
+fi
 
-mv ~/.vim ~/.vim.bak
-ln -s $(pwd)/.vim ~/.vim
+if [ ! -d "$HOME/.vim" ];
+then
+	echo ""
+	echo "backing up ~/.vim"
+	mv ~/.vim ~/.vim.bak
+fi
 
+echo ""
+echo "initializing submodules"
+git submodule init
 git submodule update
+
+echo ""
+echo "reloading bash"
+source ~/.bashrc
 
