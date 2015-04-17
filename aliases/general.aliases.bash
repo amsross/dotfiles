@@ -11,7 +11,7 @@ alias ls='ls -hBGlah -F --color --show-control-chars'
 alias ll='ls'
 alias lsd='ls -l ${colorflag} | grep "^d"'
 
-alias pause="watch -n 1 'netstat -a'"
+alias pause="watch -n 10 'netstat -a'"
 
 alias md='mkdir -p'
 alias rd='rmdir'
