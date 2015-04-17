@@ -3,9 +3,6 @@ path="$HOME/dotfiles"
 
 source $path/theme/prompt.sh
 
-eval `dircolors $HOME/dotfiles/theme/dircolors.ansi-dark`
-#eval `dircolors $HOME/dotfiles/theme/dircolors.ansi-light`
-
 #$include /etc/inputrc
 set mark-symlinked-directories on
 
@@ -62,3 +59,8 @@ load_all aliases
 #echo ""
 #echo "loading completions"
 load_all completions
+
+#echo ""
+#echo "setting dircolors"
+eval `dircolors $HOME/dotfiles/theme/dircolors.ansi-dark`
+#eval `dircolors $HOME/dotfiles/theme/dircolors.ansi-light`
