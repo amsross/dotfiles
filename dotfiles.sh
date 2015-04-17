@@ -2,6 +2,7 @@ path="$HOME/dotfiles"
 #echo "$path"
 
 source $path/theme/prompt.sh
+
 #$include /etc/inputrc
 set mark-symlinked-directories on
 
@@ -10,6 +11,20 @@ then
 	#echo ""
 	#echo "loading default gitconfig"
 	ln -s "$path/.gitconfig" $HOME/.gitconfig
+fi
+
+if [ ! -f "$HOME/.vimrc" ];
+then
+	#echo ""
+	#echo "loading default vimrc"
+	ln -s "$path/.vimrc" $HOME/.vimrc
+fi
+
+if [ ! -d "$HOME/.vim" ];
+then
+	#echo ""
+	#echo "loading default vim"
+	ln -s "$path/.vim" $HOME/.vim
 fi
 
 export CLICOLOR=1
@@ -44,3 +59,8 @@ load_all aliases
 #echo ""
 #echo "loading completions"
 load_all completions
+
+#echo ""
+#echo "setting dircolors"
+eval `dircolors $HOME/dotfiles/theme/dircolors.ansi-dark`
+#eval `dircolors $HOME/dotfiles/theme/dircolors.ansi-light`
