@@ -6,6 +6,7 @@ colorscheme solarized
 au BufNewFile,BufRead *.ejs set filetype=jst
 
 filetype plugin indent on
+set nowrap
 set autoindent
 set backspace=indent,eol,start
 set path=.,,*
