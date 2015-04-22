@@ -74,12 +74,16 @@ On_IWhite="\[\033[0;107m\]"   # White
 Time12h="\T"
 Time12a="\@"
 PathShort="\w"
+Hostname="\h"
+User="\u"
 PathFull="\W"
 NewLine="\n"
 Jobs="\j"
+GitStatus="$(__git_ps1 "(%s)")"
 
 #with username
-export PS1=$Time12h' \[\033[0;33m\]\u\[\033[0;31m\]@\[\033[01;32m\]\h\[\033[0;36m\] \w\[\033[1;33m\]$(__git_ps1 "(%s)") \[\033[36m\]$\[\033[00m\] '
+export PS1=$Time12h' '$Yellow$User$Red'@'$BGreen$Hostname$Cyan' '$PathShort$BYellow$GitStatus$Color_Off' '$BRed'$'$Color_Off' '
 
 #without username
-#export PS1=$Time12h' \[\033[01;32m\]\h\[\033[01;37m\] \w\[\033[1;33m\]$(__git_ps1 "(%s)") \[\033[01;37m\]$\[\033[00m\] '
+#export PS1=$Time12h' '$BGreen$Hostname$Cyan' '$PathShort$BYellow$GitStatus$BRed'$'$Color_Off' '
+
