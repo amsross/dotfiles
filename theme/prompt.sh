@@ -79,7 +79,7 @@ User="\u"
 PathFull="\W"
 NewLine="\n"
 Jobs="\j"
-GitStatus="$(__git_ps1 "(%s)")"
+GitStatus='$(__git_ps1 "(%s)")'
 
 #with username
 export PS1=$Time12h' '$Yellow$User$Red'@'$BGreen$Hostname$Cyan' '$PathShort$BYellow$GitStatus$Color_Off' '$BRed'$'$Color_Off' '
