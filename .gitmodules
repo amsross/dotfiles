@@ -1,21 +1,21 @@
 [submodule ".vim/bundle/vim-less"]
 	path = .vim/bundle/vim-less
-	url = git@github.com:groenewege/vim-less.git
+	url = https://github.com/groenewege/vim-less.git
 [submodule ".vim/bundle/vim-jade"]
 	path = .vim/bundle/vim-jade
-	url = git@github.com:digitaltoad/vim-jade.git
+	url = https://github.com/digitaltoad/vim-jade.git
 [submodule ".vim/bundle/vim-sensible"]
 	path = .vim/bundle/vim-sensible
-	url = git@github.com:tpope/vim-sensible.git
+	url = https://github.com/tpope/vim-sensible.git
 [submodule ".vim/bundle/vim-colors-solarized"]
 	path = .vim/bundle/vim-colors-solarized
-	url = git://github.com/altercation/vim-colors-solarized.git
+	url = https://github.com/altercation/vim-colors-solarized.git
 [submodule ".vim/bundle/ctrlp.vim"]
 	path = .vim/bundle/ctrlp.vim
-	url = git@github.com:kien/ctrlp.vim.git
+	url = https://github.com/kien/ctrlp.vim.git
 [submodule ".vim/bundle/vim-jst"]
 	path = .vim/bundle/vim-jst
-	url = git://github.com/jeyb/vim-jst.git
+	url = https://github.com/jeyb/vim-jst.git
 [submodule ".vim/bundle/vim-gitgutter"]
 	path = .vim/bundle/vim-gitgutter
-	url = git://github.com/airblade/vim-gitgutter.git
+	url = https://github.com/airblade/vim-gitgutter.git
