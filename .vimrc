@@ -15,6 +15,8 @@ set wildignore+=*/tmp/*,*.swp,*/vendor/*,*/cache/*,*/node_modules/*
 
 let g:ctrlp_map = '<C-P>'
 let g:ctrlp_cmd = 'CtrlP'
+let g:multi_cursor_exit_from_visual_mode = 0
+let g:multi_cursor_exit_from_insert_mode = 0
 
 nnoremap <f6> :tabp<return>
 nnoremap <f7> :tabe 
