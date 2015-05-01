@@ -6,27 +6,6 @@ source $path/theme/prompt.sh
 #$include /etc/inputrc
 set mark-symlinked-directories on
 
-if [ ! -f "$HOME/.gitconfig" ];
-then
-	#echo ""
-	#echo "loading default gitconfig"
-	ln -s "$path/.gitconfig" $HOME/.gitconfig
-fi
-
-if [ ! -f "$HOME/.vimrc" ];
-then
-	#echo ""
-	#echo "loading default vimrc"
-	ln -s "$path/.vimrc" $HOME/.vimrc
-fi
-
-if [ ! -d "$HOME/.vim" ];
-then
-	#echo ""
-	#echo "loading default vim"
-	ln -s "$path/.vim" $HOME/.vim
-fi
-
 export CLICOLOR=1
 export EDITOR='vim -f'
 export HISTFILESIZE=10000
