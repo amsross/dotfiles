@@ -21,5 +21,4 @@ let g:multi_cursor_exit_from_insert_mode = 0
 nnoremap <f6> :tabp<return>
 nnoremap <f7> :tabe 
 nnoremap <f8> :tabn<return>
-nnoremap te :tabe
-
+nnoremap te :tabe<space>
