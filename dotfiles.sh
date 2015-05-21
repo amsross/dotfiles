@@ -1,7 +1,7 @@
 path="$HOME/dotfiles"
 #echo "$path"
 
-source $path/theme/prompt.sh
+source $path/bash/theme/prompt.sh
 
 #$include /etc/inputrc
 set mark-symlinked-directories on
@@ -22,11 +22,11 @@ unset MAILCHECK
 
 function load_all() {
 	file_type=$1
-	[ ! -d "$path/$file_type" ] && mkdir "$path/${file_type}"
-	for src in $path/${file_type}/*; do
+	[ ! -d "$path/bash/$file_type" ] && mkdir "$path/bash/${file_type}"
+	for src in $path/bash/${file_type}/*; do
 		filename="$(basename ${src})"
 		[ ${filename:0:1} = "_" ] && continue
-		dest="${path}/${file_type}/${filename}"
+		dest="${path}/bash/${file_type}/${filename}"
 		source $dest
 	done
 }
