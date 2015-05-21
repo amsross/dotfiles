@@ -41,5 +41,5 @@ load_all completions
 
 #echo ""
 #echo "setting dircolors"
-eval `dircolors $HOME/dotfiles/theme/dircolors.ansi-dark`
+eval `dircolors $HOME/dotfiles/bash/theme/dircolors.ansi-dark`
 #eval `dircolors $HOME/dotfiles/theme/dircolors.ansi-light`
