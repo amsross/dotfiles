@@ -1,6 +1,6 @@
 execute pathogen#infect()
 syntax enable
-set background=dark
+set background=light
 colorscheme solarized
 
 au BufNewFile,BufRead *.ejs set filetype=jst
