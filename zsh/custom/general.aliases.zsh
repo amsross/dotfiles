@@ -35,7 +35,6 @@ alias vi="vim"
 alias o="open"
 alias oo="open ."
 alias q='exit'
-alias tmux="TERM=xterm-256color /usr/bin/tmux"
 
 alias tf='tail -F -n200'
 
