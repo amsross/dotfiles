@@ -4,9 +4,12 @@ set background=light
 colorscheme solarized
 
 au BufNewFile,BufRead *.ejs set filetype=jst
+" enable spell checking for git commits
+autocmd FileType gitcommit setlocal spell
 
 filetype plugin indent on
 set nowrap
+set showbreak=↪
 set autoindent
 set backspace=indent,eol,start
 set path=.,,*
@@ -22,3 +25,11 @@ nnoremap <f6> :tabp<return>
 nnoremap <f7> :tabe 
 nnoremap <f8> :tabn<return>
 nnoremap te :tabe<space>
+" disable Ex mode
+nnoremap Q <nop>
+
+" autoreload ~/.vimrc when changed
+augroup reload_vimrc " {
+	autocmd!
+	autocmd BufWritePost $MYVIMRC source $MYVIMRC
+augroup END " }
