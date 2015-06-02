@@ -6,6 +6,7 @@ source $path/bash/theme/prompt.sh
 #$include /etc/inputrc
 set mark-symlinked-directories on
 
+export VIMBLACKLIST='somefakeplugin'
 export CLICOLOR=1
 export EDITOR='vim -f'
 export HISTFILESIZE=10000
@@ -14,8 +15,7 @@ export HISTCONTROL="ignoredups"
 export HISTCONTROL=erasedups
 export GIT_PS1_SHOWDIRTYSTATE=1
 export AUTOFEATURE=true autotest
-PROMPT_COMMAND='history -a'
-
+export PROMPT_COMMAND='history -a'
 export GREP_COLOR='1;33'
 
 unset MAILCHECK
