@@ -51,6 +51,7 @@ ZSH_CUSTOM=$HOME/dotfiles/zsh/custom
 plugins=(git symfony2 tmux web-search zsh_reload bower composer cp extract grunt heroku)
 
 # User configuration
+ZSH_TMUX_AUTOSTART="true"
 
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
