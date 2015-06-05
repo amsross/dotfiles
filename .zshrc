@@ -48,9 +48,10 @@ ZSH_CUSTOM=$HOME/dotfiles/zsh/custom
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git symfony2 tmux web-search zsh_reload bower composer cp extract grunt heroku)
 
 # User configuration
+ZSH_TMUX_AUTOSTART="true"
 
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
