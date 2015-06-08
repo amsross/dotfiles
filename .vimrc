@@ -24,8 +24,6 @@ let NERDTreeShowHidden=1
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_map = '<C-P>'
 let g:ctrlp_show_hidden=1
-let g:multi_cursor_exit_from_insert_mode = 0
-let g:multi_cursor_exit_from_visual_mode = 0
 let g:ctrlp_custom_ignore = 'node_modules\|.git\|cache\|bower_components'
 
 nnoremap <f6> :tabp<return>
