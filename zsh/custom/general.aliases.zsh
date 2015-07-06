@@ -21,7 +21,7 @@ alias rd='rmdir'
 alias ..='cd ..'         # Go up one directory
 alias ...='cd ../..'     # Go up two directories
 alias ....='cd ../../..' # Go up two directories
-alias -- -='cd -'        # Go back
+alias ..-='cd -'        # Go back
 
 # Shortcuts
 alias d="cd ~/Dropbox"
