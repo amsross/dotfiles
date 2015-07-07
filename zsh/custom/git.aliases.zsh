@@ -9,10 +9,9 @@ alias gcl='git clone --recursive'
 # alias gdv='git diff -w "$@" | vim -R -'
 alias gfgr='git fetch && git rebase'
 # alias gits="git status"
-# alias gl='git log --graph --abbrev-commit'
-# alias gll='gl --pretty=oneline'
-# alias glg="gl --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --date=relative"
-# alias glgs="glg --stat"
+alias gll='git log --graph --abbrev-commit --pretty=oneline'
+alias glg="git log --graph --abbrev-commit --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --date=relative"
+alias glgs="git log --graph --abbrev-commit --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --date=relative --stat"
 # alias gmu='git fetch origin -v; git fetch upstream -v; git merge upstream/master'
 alias gpl='git pull'
 alias gplo='git pull origin'
