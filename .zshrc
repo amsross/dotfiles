@@ -1,4 +1,5 @@
 # Path to your oh-my-zsh installation.
+export TERM=xterm-16color
 export ZSH=$HOME/.oh-my-zsh
 export VIMBLACKLIST='somefakeplugin'
 
