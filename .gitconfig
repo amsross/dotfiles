@@ -17,6 +17,5 @@
         default = matching
 [core]
 	autocrlf = false
-        filemode = false
 [push]
 	default = matching
