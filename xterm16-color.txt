@@ -1,0 +1,5 @@
+## install xterm-16color
+#  sudo tic xterm16-color.txt
+xterm-16color|xterm with 16 colors,
+    colors#16, use=xterm,
+
