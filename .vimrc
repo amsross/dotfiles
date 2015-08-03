@@ -19,6 +19,7 @@ set backspace=indent,eol,start
 set path=.,,*
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 set wildignore+=*/tmp/*,*.swp,*/vendor/*,*/cache/*,*/node_modules/*,.git/*
+set tabstop=2 shiftwidth=2 expandtab
 
 let NERDTreeShowHidden=1
 let g:ctrlp_cmd = 'CtrlP'
