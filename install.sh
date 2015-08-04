@@ -59,6 +59,19 @@ then
 	ln -s "$path/.gitconfig" $HOME/.gitconfig
 fi
 
+if [ -f "$HOME/.gitignore_global" ] && ! [ -L "$HOME/.gitignore_global" ];
+then
+	echo ""
+	echo "backing up $HOME/.gitignore_global"
+	mv $HOME/.gitignore_global $HOME/.gitignore_global.bak
+fi
+if ! [ -f "$HOME/.gitignore_global" ];
+then
+	echo ""
+	echo "loading default gitignore_global"
+	ln -s "$path/.gitignore_global" $HOME/.gitignore_global
+fi
+
 if [ -f "$HOME/.vimrc" ] && ! [ -L "$HOME/.vimrc" ];
 then
 	echo ""
