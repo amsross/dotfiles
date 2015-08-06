@@ -1,6 +1,7 @@
 path="$HOME/dotfiles"
 #echo "$path"
 
+.  ~/.vim/bundle/powerline/powerline/bindings/bash/powerline.sh
 source $path/bash/theme/prompt.sh
 
 #$include /etc/inputrc
@@ -41,5 +42,7 @@ load_all completions
 
 #echo ""
 #echo "setting dircolors"
-eval `dircolors $HOME/dotfiles/dircolors/dircolors.ansi-dark`
+if which dircolors >/dev/null; then
+  eval `dircolors $HOME/dotfiles/dircolors/dircolors.ansi-dark`
+fi
 #eval `dircolors $HOME/dircolors/dircolors.ansi-light`
