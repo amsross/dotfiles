@@ -4,6 +4,16 @@ set t_ut=
 set background=dark
 colorscheme solarized
 
+" enable powerline
+set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim/
+let g:Powerline_symbols = 'fancy'
+set encoding=utf-8
+set laststatus=2
+set t_Co=256
+set fillchars+=stl:\ ,stlnc:\
+set term=xterm-256color
+set termencoding=utf-8
+
 au BufNewFile,BufRead *.ejs set filetype=jst
 " enable spell checking for git commits
 autocmd FileType gitcommit setlocal spell
