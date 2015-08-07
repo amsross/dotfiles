@@ -1,14 +1,14 @@
 # Path to your oh-my-zsh installation.
-export TERM=xterm-16color
+export TERM=xterm-256color
 export ZSH=$HOME/.oh-my-zsh
 export VIMBLACKLIST='somefakeplugin'
+export XDG_CONFIG_HOME=$HOME/.config
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to 'random', it'll load a random theme each
 # time that oh-my-zsh is loaded.
 ZSH_THEME='agnoster'
-. ~/.vim/bundle/powerline/powerline/bindings/zsh/powerline.zsh
 
 DEFAULT_USER='nitrous'
 
@@ -87,3 +87,4 @@ fi
 if which dircolors >/dev/null; then
 	eval `dircolors $HOME/dotfiles/dircolors/dircolors.ansi-dark`
 fi
+. ~/.vim/bundle/powerline/powerline/bindings/zsh/powerline.zsh
