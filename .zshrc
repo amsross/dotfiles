@@ -2,7 +2,7 @@
 export TERM=xterm-256color
 export ZSH=$HOME/.oh-my-zsh
 export VIMBLACKLIST='somefakeplugin'
-export XDG_CONFIG_HOME=$HOME/.config
+export POWERLINE_CONFIG_PATHS=$HOME/.vim/bundle/powerline/powerline/config_files:$HOME/dotfiles/powerline
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/

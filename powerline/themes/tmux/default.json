@@ -1,0 +1,34 @@
+{
+	"segments": {
+    "left": [
+    ],
+		"right": [
+			{
+				"function": "powerline.segments.common.wthr.weather",
+				"priority": 50,
+        "args": {
+          "unit": "F"
+        }
+			},
+			{
+				"function": "powerline.segments.common.time.date"
+			},
+			{
+				"function": "powerline.segments.common.time.date",
+				"name": "time",
+				"args": {
+					"format": "%I:%M:%S",
+					"istime": true
+				}
+			},
+			{
+				"function": "powerline.segments.tmux.attached_clients",
+				"priority": 50
+			},
+			{
+				"function": "powerline.segments.common.net.hostname",
+				"priority": 50
+			}
+		]
+	}
+}
