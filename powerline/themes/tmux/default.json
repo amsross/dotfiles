@@ -7,6 +7,8 @@
 				"function": "powerline.segments.common.wthr.weather",
 				"priority": 50,
         "args": {
+          "interval": 60000,
+          "location_query": "haddonfield, nj, usa",
           "unit": "F"
         }
 			},
