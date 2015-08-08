@@ -8,7 +8,7 @@ export XDG_CONFIG_HOME=$HOME/.config
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to 'random', it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME='agnoster'
+ZSH_THEME='maran'
 
 DEFAULT_USER='nitrous'
 
@@ -87,4 +87,6 @@ fi
 if which dircolors >/dev/null; then
 	eval `dircolors $HOME/dotfiles/dircolors/dircolors.ansi-dark`
 fi
-. ~/.vim/bundle/powerline/powerline/bindings/zsh/powerline.zsh
+if which powerline >/dev/null; then
+  . ~/.vim/bundle/powerline/powerline/bindings/zsh/powerline.zsh
+fi
