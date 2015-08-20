@@ -16,7 +16,9 @@ if executable("powerline")
   set termencoding=utf-8
 endif
 
+" enable jst syntax highlighting
 au BufNewFile,BufRead *.ejs set filetype=jst
+
 " enable spell checking for git commits
 autocmd FileType gitcommit setlocal spell
 
@@ -39,9 +41,6 @@ let g:ctrlp_map = '<C-P>'
 let g:ctrlp_show_hidden=1
 let g:ctrlp_custom_ignore = 'node_modules\|.git\|cache\|bower_components'
 
-nnoremap <f6> :tabp<return>
-nnoremap <f7> :tabe 
-nnoremap <f8> :tabn<return>
 nnoremap te :tabe<space>
 " disable Ex mode
 nnoremap Q <nop>

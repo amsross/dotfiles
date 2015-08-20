@@ -1,22 +1,18 @@
-[user]
-	name = Matt Ross
-[github]
-	user = amsross
 [color]
-	ui = auto
+  ui = auto
 [alias]
-	st = status
-	di = diff
-	ci = commit
-	br = branch
-	llog = log --date=local
+  st = status
+  di = diff
+  ci = commit
+  br = branch
+  llog = log --date=local
 [rerere]
-	enabled = true
+  enabled = true
 [pull]
-        rebase = false
-        default = matching
+  rebase = false
+  default = matching
 [core]
-	autocrlf = false
-	excludesfile = ~/.gitignore_global
+  autocrlf = false
+  excludesfile = ~/.gitignore_global
 [push]
-	default = matching
+  default = matching
