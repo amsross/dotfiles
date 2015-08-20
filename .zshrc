@@ -55,7 +55,7 @@ plugins=(git symfony2 tmux web-search zsh_reload bower composer cp extract grunt
 # User configuration
 ZSH_TMUX_AUTOSTART='false'
 
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:$PATH
 # export MANPATH='/usr/local/man:$MANPATH'
 
 source $ZSH/oh-my-zsh.sh
