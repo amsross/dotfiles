@@ -1,36 +1,42 @@
 {
-	"segments": {
+  "segments": {
     "left": [
-    ],
-		"right": [
-			{
-				"function": "powerline.segments.common.wthr.weather",
-				"priority": 50,
+      ],
+      "right": [
+      {
+        "function": "powerline.segments.common.wthr.weather",
+        "priority": 50,
         "args": {
           "interval": 1800000,
           "location_query": "haddonfield, nj, usa",
           "unit": "F"
         }
-			},
-			{
-				"function": "powerline.segments.common.time.date"
-			},
-			{
-				"function": "powerline.segments.common.time.date",
-				"name": "time",
-				"args": {
-					"format": "%I:%M:%S",
-					"istime": true
-				}
-			},
-			{
-				"function": "powerline.segments.tmux.attached_clients",
-				"priority": 50
-			},
-			{
-				"function": "powerline.segments.common.net.hostname",
-				"priority": 50
-			}
-		]
-	}
+      },
+      {
+        "function": "powerline.segments.common.time.date"
+      },
+      {
+        "function": "powerline.segments.common.time.date",
+        "name": "time",
+        "args": {
+          "format": "%I:%M:%S",
+          "istime": true
+        }
+      },
+      {
+        "function": "powerline.segments.tmux.attached_clients",
+        "priority": 50
+      },
+      {
+        "function": "powerline.segments.common.net.hostname",
+        "priority": 50
+      },
+      {
+        "function": "powerline.segments.common.bat.battery",
+        "args": {
+          "gamify": true
+        }
+      }
+    ]
+  }
 }
