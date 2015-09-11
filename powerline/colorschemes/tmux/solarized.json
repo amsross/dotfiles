@@ -1,6 +1,7 @@
 {
   "groups": {
-      "battery_gradient":     { "fg": "solarized:red",    "bg": "solarized:base02", "attrs": [] },
+      "battery_full":         { "fg": "solarized:red",    "bg": "solarized:base02", "attrs": [] },
+      "battery_empty":        { "fg": "solarized:base01", "bg": "solarized:base02", "attrs": [] },
       "active_window_status": { "fg": "solarized:blue",   "bg": "solarized:base02", "attrs": [] },
       "active_window_status": { "fg": "solarized:blue",   "bg": "solarized:base02", "attrs": [] },
       "window_status":        { "fg": "solarized:base1",  "bg": "solarized:base02", "attrs": [] },
