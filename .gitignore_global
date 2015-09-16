@@ -4,4 +4,6 @@
 *_log
 .DS_Store
 Thumbs.db
+bower_components
 coverage
+node_modules

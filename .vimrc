@@ -3,6 +3,8 @@ syntax enable
 set t_ut=
 set background=dark
 colorscheme solarized
+set clipboard=unnamed
+set mouse=nvr
 
 " enable powerline
 if executable("powerline")
@@ -40,6 +42,12 @@ let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_map = '<C-P>'
 let g:ctrlp_show_hidden=1
 let g:ctrlp_custom_ignore = 'node_modules\|.git\|cache\|bower_components'
+
+" window size changes
+nnoremap <C-w>> :15winc ><CR>
+nnoremap <C-w>< :15winc <<CR>
+nnoremap <C-w>- :15winc -<CR>
+nnoremap <C-w>+ :15winc +<CR>
 
 nnoremap te :tabe<space>
 " disable Ex mode
