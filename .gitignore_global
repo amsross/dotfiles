@@ -1,5 +1,6 @@
 *.log
 *.sublime-*
+*.swo
 *.swp
 *_log
 .DS_Store
