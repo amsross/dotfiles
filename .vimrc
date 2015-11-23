@@ -1,10 +1,17 @@
 execute pathogen#infect()
 syntax enable
 set t_ut=
-set background=dark
-colorscheme solarized
 set clipboard=unnamed
 set mouse=nvr
+
+let tmateenv=$TMATEENV
+if tmateenv == "1"
+  set background=dark
+  colorscheme delek
+else
+  set background=dark
+  colorscheme solarized
+endif
 
 " enable powerline
 if executable("powerline")
