@@ -84,9 +84,9 @@ fi
 # Example aliases
 # alias zshconfig='mate ~/.zshrc'
 # alias ohmyzsh='mate ~/.oh-my-zsh'
-if which dircolors >/dev/null; then
+if which dircolors &> /dev/null; then
 	eval `dircolors $HOME/dotfiles/dircolors/dircolors.ansi-dark`
 fi
-if which powerline >/dev/null; then
+if which powerline &> /dev/null; then
   . ~/.vim/bundle/powerline/powerline/bindings/zsh/powerline.zsh
 fi
