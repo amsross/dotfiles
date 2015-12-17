@@ -41,10 +41,10 @@ load_all completions
 
 #echo ""
 #echo "setting dircolors"
-if which dircolors >/dev/null; then
+if which dircolors &> /dev/null; then
   eval `dircolors $HOME/dotfiles/dircolors/dircolors.ansi-dark`
   #eval `dircolors $HOME/dircolors/dircolors.ansi-light`
 fi
-if which powerline >/dev/null; then
+if which powerline &> /dev/null; then
   .  ~/.vim/bundle/powerline/powerline/bindings/bash/powerline.sh
 fi
