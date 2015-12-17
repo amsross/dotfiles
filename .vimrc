@@ -36,7 +36,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 
 filetype plugin indent on
 set nowrap
-set showbreak=↪
+let &showbreak = '↳ '
 set autoindent
 set backspace=indent,eol,start
 set path=.,,*
