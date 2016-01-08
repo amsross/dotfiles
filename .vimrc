@@ -45,6 +45,7 @@ set wildignore+=*/tmp/*,*.swp,*/vendor/*,*/cache/*,*/node_modules/*,.git/*
 set tabstop=2 shiftwidth=2 expandtab
 
 let NERDTreeShowHidden=1
+let NERDTreeIgnore=['\.git$']
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_map = '<C-P>'
 let g:ctrlp_show_hidden=1
