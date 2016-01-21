@@ -4,6 +4,7 @@
 *.swp
 *_log
 .DS_Store
+Session.vim
 Thumbs.db
 bower_components
 coverage
