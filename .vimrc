@@ -64,6 +64,12 @@ nnoremap te :tabe<space>
 " disable Ex mode
 nnoremap Q <nop>
 
+" no more arrow keys <gasp>
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
+
 map <C-n> :NERDTreeToggle<CR>
 
 " autoreload ~/.vimrc when changed
