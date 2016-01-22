@@ -1,5 +1,7 @@
 {
   "groups": {
+      "battery_online":       { "fg": "solarized:yellow", "bg": "solarized:base02", "attrs": [] },
+      "battery_offline":      { "fg": "solarized:blue",   "bg": "solarized:base02", "attrs": [] },
       "battery_full":         { "fg": "solarized:red",    "bg": "solarized:base02", "attrs": [] },
       "battery_empty":        { "fg": "solarized:base01", "bg": "solarized:base02", "attrs": [] },
       "active_window_status": { "fg": "solarized:blue",   "bg": "solarized:base02", "attrs": [] },
