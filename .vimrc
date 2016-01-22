@@ -3,6 +3,7 @@ syntax enable
 set t_ut=
 set clipboard=unnamed
 set mouse=nvr
+set number
 set foldmethod=indent
 set foldlevelstart=99
 
