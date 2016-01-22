@@ -3,6 +3,8 @@ syntax enable
 set t_ut=
 set clipboard=unnamed
 set mouse=nvr
+set foldmethod=indent
+set foldlevelstart=99
 
 let tmateenv=$TMATEENV
 if tmateenv == "1"
