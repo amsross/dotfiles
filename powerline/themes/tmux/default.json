@@ -28,10 +28,6 @@
         "priority": 50
       },
       {
-        "function": "powerline.segments.common.net.hostname",
-        "priority": 50
-      },
-      {
         "function": "powerline.segments.common.bat.battery",
         "args": {
           "gamify": true
