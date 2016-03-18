@@ -1,11 +1,14 @@
 *.log
+*.patch
 *.sublime-*
 *.swo
 *.swp
 *_log
 .DS_Store
+.jekyll-metadata
 Session.vim
 Thumbs.db
 bower_components
 coverage
+foo.*
 node_modules

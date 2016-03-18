@@ -16,3 +16,5 @@
   excludesfile = ~/.gitignore_global
 [push]
   default = matching
+[user]
+	name = Matt Ross
