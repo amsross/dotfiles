@@ -4,6 +4,8 @@ set t_ut=
 set clipboard=unnamed
 set mouse=nvr
 set number
+set binary
+set noeol
 set foldmethod=indent
 set foldlevelstart=99
 
