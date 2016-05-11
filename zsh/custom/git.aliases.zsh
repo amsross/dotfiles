@@ -27,3 +27,4 @@ alias gs='git status'
 # alias gd="git diff"
 alias gds="git diff --staged"
 alias gdws="git diff --word-diff --staged"
+alias gdn="git diff --name-only" # vi `gdn` to edit changed files
