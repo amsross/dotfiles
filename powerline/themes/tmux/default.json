@@ -4,15 +4,6 @@
       ],
       "right": [
       {
-        "function": "powerline.segments.common.wthr.weather",
-        "priority": 50,
-        "args": {
-          "interval": 1800000,
-          "location_query": "haddonfield, nj, usa",
-          "unit": "F"
-        }
-      },
-      {
         "function": "powerline.segments.common.time.date"
       },
       {
