@@ -27,4 +27,7 @@
 	url = https://github.com/powerline/powerline.git
 [submodule ".vim/bundle/vim-obsession"]
 	path = .vim/bundle/vim-obsession
-	url = git://github.com/tpope/vim-obsession.git
+	url = https://github.com/tpope/vim-obsession.git
+[submodule ".vim/bundle/vim-fugitive"]
+	path = .vim/bundle/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive.git
