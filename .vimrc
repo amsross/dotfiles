@@ -36,9 +36,6 @@ au BufNewFile,BufRead *.ejs set filetype=jst
 " enable spell checking for git commits
 autocmd FileType gitcommit setlocal spell
 
-" close vim if only nerdtree is left
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-
 filetype plugin indent on
 set nowrap
 let &showbreak = '↳ '
@@ -49,8 +46,6 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 set wildignore+=*/tmp/*,*.swp,*/vendor/*,*/cache/*,*/node_modules/*,.git/*
 set tabstop=2 shiftwidth=2 expandtab
 
-let NERDTreeShowHidden=1
-let NERDTreeIgnore=['\.git$', 'Session\.vim']
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_map = '<C-P>'
 let g:ctrlp_show_hidden=1
@@ -71,8 +66,6 @@ noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
-
-map <C-n> :NERDTreeToggle<CR>
 
 " autoreload ~/.vimrc when changed
 augroup reload_vimrc " {
