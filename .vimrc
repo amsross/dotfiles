@@ -4,10 +4,14 @@ set t_ut=
 set clipboard=unnamed
 set mouse=nvr
 set number
+set relativenumber
 set binary
-set noeol
+set eol
 set foldmethod=indent
 set foldlevelstart=99
+" keep 5 lines between the cursor and the bottom
+set scrolloff=5
+set diffopt=vertical
 
 let tmateenv=$TMATEENV
 if tmateenv == "1"
@@ -44,7 +48,9 @@ set backspace=indent,eol,start
 set path=.,,*
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 set wildignore+=*/tmp/*,*.swp,*/vendor/*,*/cache/*,*/node_modules/*,.git/*
-set tabstop=2 shiftwidth=2 expandtab
+set tabstop=2
+set shiftwidth=2
+set expandtab
 
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_map = '<C-P>'
