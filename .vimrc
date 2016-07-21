@@ -40,6 +40,9 @@ au BufNewFile,BufRead *.ejs set filetype=jst
 " enable spell checking for git commits
 autocmd FileType gitcommit setlocal spell
 
+" open a cwindow for results whenever grep is run
+autocmd QuickFixCmdPost *grep* cwindow
+
 filetype plugin indent on
 set nowrap
 let &showbreak = '↳ '
