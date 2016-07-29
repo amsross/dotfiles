@@ -12,3 +12,4 @@ bower_components
 coverage
 foo.*
 node_modules
+secrets.js
