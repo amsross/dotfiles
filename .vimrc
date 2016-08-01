@@ -76,10 +76,6 @@ noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
 
-" comment/uncomment
-noremap <Leader>i :normal 0i// <CR>
-noremap <Leader>u :normal 03x<CR>
-
 " autoreload ~/.vimrc when changed
 augroup reload_vimrc " {
 	autocmd!
