@@ -11,5 +11,6 @@ Thumbs.db
 bower_components
 coverage
 foo.*
+foo/
 node_modules
 secrets.js
