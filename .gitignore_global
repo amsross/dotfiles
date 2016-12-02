@@ -3,6 +3,7 @@
 *.sublime-*
 *.swo
 *.swp
+*.un~
 *_log
 .DS_Store
 .jekyll-metadata

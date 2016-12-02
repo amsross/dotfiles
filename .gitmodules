@@ -34,3 +34,6 @@
 [submodule ".vim/bundle/vim-fubitive"]
 	path = .vim/bundle/vim-fubitive
 	url = https://github.com/tommcdo/vim-fubitive.git
+[submodule ".vim/bundle/vim-better-default"]
+	path = .vim/bundle/vim-better-default
+	url = https://github.com/liuchengxu/vim-better-default.git
