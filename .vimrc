@@ -44,6 +44,8 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 
+let g:github_enterprise_urls = ['https://github.comcast.com']
+
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_map = '<C-P>'
 let g:ctrlp_show_hidden=1
