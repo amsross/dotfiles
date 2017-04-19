@@ -18,3 +18,5 @@
   default = matching
 [user]
 	name = Matt Ross
+[fetch]
+	prune = true

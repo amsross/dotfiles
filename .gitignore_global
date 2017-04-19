@@ -3,7 +3,9 @@
 *.sublime-*
 *.swo
 *.swp
+*.tar.gz
 *.un~
+*.zip
 *_log
 .DS_Store
 .jekyll-metadata
