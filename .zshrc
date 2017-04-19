@@ -95,3 +95,6 @@ fi
 # if which powerline &> /dev/null; then
 #   . ~/.vim/bundle/powerline/powerline/bindings/zsh/powerline.zsh
 # fi
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
