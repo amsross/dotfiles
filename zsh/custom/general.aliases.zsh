@@ -1,8 +1,8 @@
 alias reload='source ~/.zshrc && echo "sourced ~/.zshrc"'
 
-if grep --color "a" <<<"a" &>/dev/null; then
-	export GREP_OPTIONS='--color=always'
-fi
+# if grep --color "a" <<<"a" &>/dev/null; then
+# 	export GREP_OPTIONS='--color=always'
+# fi
 
 # Directory
 CLICOLOR=1
