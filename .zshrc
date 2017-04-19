@@ -9,7 +9,11 @@ export POWERLINE_CONFIG_PATHS=$HOME/.vim/bundle/powerline/powerline/config_files
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to 'random', it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME='maran'
+ZSH_THEME='spaceship'
+SPACESHIP_NVM_SHOW=true
+SPACESHIP_NVM_SYMBOL='⬢'
+SPACESHIP_NVM_SHOW_ON_PROJECT_ONLY=false
+SPACESHIP_PREFIX_ENV_DEFAULT=' $ '
 
 DEFAULT_USER='nitrous'
 
@@ -51,7 +55,7 @@ ZSH_CUSTOM=$HOME/dotfiles/zsh/custom
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git symfony2 tmux web-search zsh_reload bower composer cp extract grunt herokui npm)
+plugins=(git tmux zsh_reload cp extract herokui npm docker docker-compose)
 
 # User configuration
 ZSH_TMUX_AUTOSTART='false'
@@ -88,6 +92,6 @@ fi
 if which dircolors &> /dev/null; then
 	eval `dircolors $HOME/dotfiles/dircolors/dircolors.ansi-dark`
 fi
-if which powerline &> /dev/null; then
-  . ~/.vim/bundle/powerline/powerline/bindings/zsh/powerline.zsh
-fi
+# if which powerline &> /dev/null; then
+#   . ~/.vim/bundle/powerline/powerline/bindings/zsh/powerline.zsh
+# fi
