@@ -46,3 +46,6 @@
 [submodule ".vim/bundle/vim-javascript"]
 	path = .vim/bundle/vim-javascript
 	url = https://github.com/pangloss/vim-javascript.git
+[submodule ".vim/bundle/.vim/bundle/seoul256"]
+	path = .vim/bundle/.vim/bundle/seoul256
+	url = https://github.com/junegunn/seoul256.vim

@@ -14,12 +14,11 @@ set diffopt=vertical
 
 let tmateenv=$TMATEENV
 if tmateenv == "1"
-  set background=dark
-  colorscheme delek
-else
-  set background=dark
-  colorscheme solarized
+  let g:seoul256_srgb = 1
 endif
+
+set background=dark
+colo seoul256
 
 " enable powerline
 if executable("powerline")
