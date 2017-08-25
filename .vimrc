@@ -18,7 +18,7 @@ if tmateenv == "1"
 endif
 
 set background=dark
-colo seoul256
+colo solarized
 
 " enable powerline
 if executable("powerline")
@@ -52,6 +52,11 @@ let g:ctrlp_map = '<C-P>'
 let g:ctrlp_show_hidden=1
 let g:ctrlp_custom_ignore = 'node_modules\|\.git\/\|cache\|**/bower_components'
 
+" diff stuff
+nnoremap <Leader>dp :diffput<CR>
+nnoremap <Leader>dg :diffget<CR>
+nnoremap <Leader>du :diffupdate<CR>
+
 " plugin stuff
 nnoremap <Leader>gfs :Gwrite<CR>
 nnoremap <Leader>p :CtrlP<CR>
@@ -59,13 +64,18 @@ nnoremap <Leader>p :CtrlP<CR>
 " buffer stuff
 " close all buffers
 nnoremap <Leader>bx :%bw<CR>
+nnoremap <Leader>bb :buffers<CR>
 
 " window stuff
 " size changes
-nnoremap <C-w>> :5winc ><CR>
-nnoremap <C-w>< :5winc <<CR>
-nnoremap <C-w>- :5winc -<CR>
-nnoremap <C-w>+ :5winc +<CR>
+nnoremap <Leader>w> :5winc ><CR>
+nnoremap <Leader>w< :5winc <<CR>
+nnoremap <Leader>w- :5winc -<CR>
+nnoremap <Leader>w+ :5winc +<CR>
+nnoremap <Leader>w> :5winc ><CR>
+nnoremap <Leader>w< :5winc <<CR>
+nnoremap <Leader>w- :5winc -<CR>
+nnoremap <Leader>w+ :5winc +<CR>
 nnoremap <Leader>w <C-w>
 nnoremap <Leader>w<bar> <C-w><bar>
 

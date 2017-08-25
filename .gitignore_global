@@ -1,4 +1,5 @@
 *.log
+*.log.*
 *.patch
 *.sublime-*
 *.swo

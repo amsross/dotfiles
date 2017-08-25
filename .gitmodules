@@ -43,9 +43,12 @@
 [submodule ".vim/bundle/vim-javascript"]
 	path = .vim/bundle/vim-javascript
 	url = https://github.com/pangloss/vim-javascript.git
-[submodule ".vim/bundle/syntastic"]
-	path = .vim/bundle/syntastic
-	url = https://github.com/vim-syntastic/syntastic.git
 [submodule ".vim/bundle/seoul256"]
 	path = .vim/bundle/seoul256
 	url = https://github.com/junegunn/seoul256.vim
+[submodule ".vim/bundle/vim-fireplace"]
+	path = .vim/bundle/vim-fireplace
+	url = https://github.com/tpope/vim-fireplace.git
+[submodule ".vim/bundle/puppet"]
+	path = .vim/bundle/puppet
+	url = https://github.com/rodjek/vim-puppet.git
