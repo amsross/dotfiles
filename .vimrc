@@ -18,7 +18,7 @@ if tmateenv == "1"
 endif
 
 set background=dark
-colo solarized
+colo hybrid
 
 " enable powerline
 if executable("powerline")
