@@ -1,4 +1,5 @@
 let mapleader = "\<Space>"
+let maplocalleader = "\<Space>"
 
 " load all the plugins
 execute pathogen#infect()
@@ -42,6 +43,19 @@ set wildignore+=*/tmp/*,*.swp,*.un~,*/vendor/*,*/cache/*,*/node_modules/*,.git/*
 set tabstop=2
 set shiftwidth=2
 set expandtab
+
+" highlight the current column
+set cursorcolumn
+
+" show whitespace chars
+set listchars=tab:>-,trail:·
+set list
+
+" highlight code issues
+" long lines
+match ErrorMsg '\%>120v.\+'
+" whitespace line endings
+match ErrorMsg '\s\+$'
 
 let g:netrw_list_hide='.*\.swp$,.*\.un~,\.git/*'
 let g:jsx_ext_required = 0
