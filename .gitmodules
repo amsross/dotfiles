@@ -55,3 +55,6 @@
 [submodule ".vim/bundle/awesome-vim-colorschemes"]
 	path = .vim/bundle/awesome-vim-colorschemes
 	url = https://github.com/rafi/awesome-vim-colorschemes.git
+[submodule ".vim/bundle/vim-markdown"]
+	path = .vim/bundle/vim-markdown
+	url = https://github.com/plasticboy/vim-markdown.git
