@@ -34,6 +34,9 @@ autocmd FileType gitcommit setlocal spell
 " open a cwindow for results whenever grep is run
 autocmd QuickFixCmdPost *grep* cwindow
 
+" Maintain undo history between sessions
+set undofile
+
 set linebreak
 set nolist
 let &showbreak = '↳ '
