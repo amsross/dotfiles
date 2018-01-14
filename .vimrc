@@ -37,6 +37,8 @@ autocmd QuickFixCmdPost *grep* cwindow
 " Maintain undo history between sessions
 set undofile
 
+set conceallevel=2
+
 set linebreak
 set nolist
 let &showbreak = '↳ '
