@@ -20,6 +20,20 @@ then
 	ln -s "$path/.zshrc" $HOME/.zshrc
 fi
 
+if [ -d "$HOME/.tmux" ] && ! [ -L "$HOME/.tmux" ];
+then
+	echo ""
+	echo "backing up $HOME/.tmux"
+	mv $HOME/.tmux $HOME/.tmux.bak
+fi
+if ! [ -d "$HOME/.tmux" ];
+then
+	echo ""
+	echo "loading default tmux"
+	ln -s "$path/.tmux" $HOME/.tmux
+fi
+
+
 if [ -f "$HOME/.tmux.conf" ] && ! [ -L "$HOME/.tmux.conf" ];
 then
 	echo ""
