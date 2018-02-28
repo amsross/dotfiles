@@ -79,7 +79,7 @@ ZSH_CUSTOM=$HOME/dotfiles/zsh/custom
 plugins=(git extract npm tmux docker-compose nvm)
 
 # User configuration
-ZSH_TMUX_AUTOSTART='true'
+ZSH_TMUX_AUTOSTART='false'
 
 export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:$PATH
 # export MANPATH='/usr/local/man:$MANPATH'
