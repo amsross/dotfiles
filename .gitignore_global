@@ -9,6 +9,7 @@
 *.zip
 *_log
 .DS_Store
+.env
 .jekyll-metadata
 Session.vim
 Thumbs.db
