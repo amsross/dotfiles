@@ -71,6 +71,12 @@ let g:ctrlp_map = '<C-P>'
 let g:ctrlp_show_hidden=1
 let g:ctrlp_custom_ignore = 'node_modules\|\.git\/\|cache\|**/bower_components'
 
+" clojure/vim-fireplace stuff
+nnoremap <Leader>fr :Require<CR>
+nnoremap <Leader>fe :Eval<CR>
+nnoremap <Leader>fl :Last<CR>
+nnoremap <Leader>fc :Cljfmt<CR>
+
 " diff stuff
 nnoremap <Leader>dp :diffput<CR>
 nnoremap <Leader>dg :diffget<CR>
@@ -109,6 +115,12 @@ noremap <Right> <NOP>
 
 " don't copy overwritten selection when pasting
 vnoremap p "_dP
+
+" Activation based on file type
+augroup rainbow_lisp
+  autocmd!
+  autocmd FileType lisp,clojure,scheme RainbowParentheses
+augroup END
 
 " autoreload ~/.vimrc when changed
 augroup reload_vimrc " {
