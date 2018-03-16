@@ -8,6 +8,8 @@ execute pathogen#infect()
 " so they can be overridden if necessary
 runtime! plugin/default.vim
 
+" share the OS clipboard
+set clipboard=unnamed
 set t_ut=
 set binary
 set eol
@@ -71,6 +73,14 @@ let g:ctrlp_map = '<C-P>'
 let g:ctrlp_show_hidden=1
 let g:ctrlp_custom_ignore = 'node_modules\|\.git\/\|cache\|**/bower_components'
 
+" file explorer stuff
+" at directory of current file
+nnoremap <Leader>e :Ex<CR>
+" in split at directory of current file
+nnoremap <Leader>sp :Se<CR>
+" in vertical split at directory of current file
+nnoremap <Leader>vs :Vex<CR>
+
 " clojure/vim-fireplace stuff
 nnoremap <Leader>fr :Require<CR>
 nnoremap <Leader>fe :Eval<CR>
@@ -82,8 +92,9 @@ nnoremap <Leader>dp :diffput<CR>
 nnoremap <Leader>dg :diffget<CR>
 nnoremap <Leader>du :diffupdate<CR>
 
-" plugin stuff
+" git/vim-figutive stuff
 nnoremap <Leader>gfs :Gwrite<CR>
+
 nnoremap <Leader>p :CtrlP<CR>
 
 " buffer stuff
