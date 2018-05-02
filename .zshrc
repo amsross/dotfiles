@@ -20,6 +20,7 @@ SPACESHIP_ELIXIR_SHOW=false
 SPACESHIP_EMBER_SHOW=false
 SPACESHIP_EXEC_TIME_SHOW=false
 SPACESHIP_GOLANG_SHOW=false
+SPACESHIP_HASKELL_SHOW=false
 SPACESHIP_HG_BRANCH_SHOW=false
 SPACESHIP_HG_SHOW=false
 SPACESHIP_HG_STATUS_SHOW=false
@@ -76,7 +77,7 @@ ZSH_CUSTOM=$HOME/dotfiles/zsh/custom
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git extract lein npm tmux docker-compose nvm)
+plugins=(git extract lein npm tmux docker docker-compose nvm)
 
 # User configuration
 ZSH_TMUX_AUTOSTART='false'
@@ -115,4 +116,4 @@ fi
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
-source "/Users/matt/dotfiles/zsh/custom/themes/spaceship.zsh-theme"
+source "$HOME/dotfiles/zsh/custom/themes/spaceship.zsh-theme"
