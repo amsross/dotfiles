@@ -17,6 +17,6 @@
 [push]
   default = matching
 [user]
-	name = Matt Ross
+  name = Matt Ross
 [fetch]
-	prune = true
+  prune = true
