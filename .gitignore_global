@@ -19,3 +19,4 @@ foo.*
 foo/
 node_modules
 secrets.js
+doc/tags
