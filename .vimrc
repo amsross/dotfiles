@@ -129,6 +129,8 @@ noremap <Right> <NOP>
 " don't copy overwritten selection when pasting
 vnoremap p "_dP
 
+au BufRead,BufNewFile Dockerfile* setfiletype Dockerfile
+
 " Activation based on file type
 augroup rainbow_lisp
   autocmd!
