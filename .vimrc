@@ -8,9 +8,6 @@ execute pathogen#infect()
 " so they can be overridden if necessary
 runtime! plugin/default.vim
 
-" share the OS clipboard
-set clipboard=unnamed
-set t_ut=
 set binary
 set eol
 set diffopt=vertical
@@ -36,27 +33,21 @@ autocmd FileType gitcommit setlocal spell
 " open a cwindow for results whenever grep is run
 autocmd QuickFixCmdPost *grep* cwindow
 
-" Maintain undo history between sessions
-set undofile
+" call GitGutter when writing to a buffer
+autocmd BufWritePost * GitGutter
 
 set conceallevel=2
 
 set linebreak
-set nolist
-let &showbreak = '↳ '
 set path=.,,*
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 set wildignore+=*/tmp/*,*.swp,*.un~,*/vendor/*,*/cache/*,*/node_modules/*,.git/*
-set tabstop=2
 set shiftwidth=2
-set expandtab
+set tabstop=2
+set softtabstop=2
 
 " highlight the current column
 set cursorcolumn
-
-" show whitespace chars
-set listchars=tab:>-,trail:·
-set list
 
 " highlight code issues
 " long lines
@@ -72,6 +63,10 @@ let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_map = '<C-P>'
 let g:ctrlp_show_hidden=1
 let g:ctrlp_custom_ignore = 'node_modules\|\.git\/\|cache\|**/bower_components'
+
+" https://github.com/liuchengxu/vim-better-default
+let g:vim_better_default_persistent_undo=1
+let g:vim_better_default_tabs_as_spaces=1
 
 " file explorer stuff
 " at directory of current file
@@ -103,22 +98,6 @@ nnoremap <Leader>p :CtrlP<CR>
 " close all buffers
 nnoremap <Leader>bx :%bw<CR>
 nnoremap <Leader>bb :buffers<CR>
-
-" window stuff
-" size changes
-nnoremap <Leader>w> :5winc ><CR>
-nnoremap <Leader>w< :5winc <<CR>
-nnoremap <Leader>w- :5winc -<CR>
-nnoremap <Leader>w+ :5winc +<CR>
-nnoremap <Leader>w> :5winc ><CR>
-nnoremap <Leader>w< :5winc <<CR>
-nnoremap <Leader>w- :5winc -<CR>
-nnoremap <Leader>w+ :5winc +<CR>
-nnoremap <Leader>w <C-w>
-nnoremap <Leader>w<bar> <C-w><bar>
-
-" disable Ex mode
-nnoremap Q <nop>
 
 " no more arrow keys <gasp>
 noremap <Up> <NOP>
