@@ -25,11 +25,6 @@ set binary
 set eol
 set diffopt=vertical
 
-let tmateenv=$TMATEENV
-if tmateenv == "1"
-  let g:seoul256_srgb = 1
-endif
-
 set background=dark
 colo nord
 
