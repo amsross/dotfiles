@@ -4,6 +4,19 @@ let maplocalleader = "\<Space>"
 " load all the plugins
 execute pathogen#infect()
 
+let g:netrw_list_hide='.*\.swp$,.*\.un~,\.git/*'
+let g:jsx_ext_required = 0
+let g:github_enterprise_urls = ['https://github.comcast.com']
+
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_map = '<C-P>'
+let g:ctrlp_show_hidden=1
+let g:ctrlp_custom_ignore = 'node_modules\|\.git\/\|cache\|**/bower_components'
+
+" https://github.com/liuchengxu/vim-better-default
+let g:vim_better_default_persistent_undo=1
+let g:vim_better_default_tabs_as_spaces=1
+
 " execute all of the plugins
 " so they can be overridden if necessary
 runtime! plugin/default.vim
@@ -54,19 +67,6 @@ set cursorcolumn
 match ErrorMsg '\%>120v.\+'
 " whitespace line endings
 match ErrorMsg '\s\+$'
-
-let g:netrw_list_hide='.*\.swp$,.*\.un~,\.git/*'
-let g:jsx_ext_required = 0
-let g:github_enterprise_urls = ['https://github.comcast.com']
-
-let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_map = '<C-P>'
-let g:ctrlp_show_hidden=1
-let g:ctrlp_custom_ignore = 'node_modules\|\.git\/\|cache\|**/bower_components'
-
-" https://github.com/liuchengxu/vim-better-default
-let g:vim_better_default_persistent_undo=1
-let g:vim_better_default_tabs_as_spaces=1
 
 " file explorer stuff
 " at directory of current file
