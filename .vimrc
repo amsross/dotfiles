@@ -72,6 +72,7 @@ nnoremap <Leader>ev :Vex<CR>
 " clojure/vim-fireplace stuff
 nnoremap <Leader>fr :Require<CR>
 nnoremap <Leader>fe :Eval<CR>
+vnoremap <Leader>fe :Eval<CR>
 nnoremap <Leader>fl :Last<CR>
 nnoremap <Leader>fc :Cljfmt<CR>
 
