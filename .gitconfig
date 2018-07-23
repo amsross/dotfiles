@@ -18,6 +18,7 @@
   default = matching
 [user]
   name = Matt Ross
-  signingkey = CB4B9ABDAA216DE0
 [fetch]
   prune = true
+[commit]
+  gpgsign = true

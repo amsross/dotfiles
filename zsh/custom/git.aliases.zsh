@@ -3,7 +3,6 @@
 # alias gb='git branch'
 # alias gc='git commit -v'
 # alias gca='git commit -v -a'
-alias git commit='git commit -S'
 alias gci='git commit --interactive'
 alias gcl='git clone --recursive'
 # alias gco='git checkout'
