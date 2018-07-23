@@ -115,3 +115,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
 source "$HOME/dotfiles/zsh/custom/themes/spaceship.zsh-theme"
+
+# for signing git commits
+export GPG_TTY=$(tty)
