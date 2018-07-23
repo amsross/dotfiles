@@ -53,9 +53,7 @@ set wildignore+=*/tmp/*,*.swp,*.un~,*/vendor/*,*/cache/*,*/node_modules/*,.git/*
 set shiftwidth=2
 set tabstop=2
 set softtabstop=2
-
-" highlight the current column
-set cursorcolumn
+set expandtab
 
 " highlight code issues
 " long lines

@@ -37,8 +37,6 @@ SPACESHIP_VENV_SHOW=false
 SPACESHIP_XCODE_SHOW_GLOBAL=false
 SPACESHIP_XCODE_SHOW_LOCAL=false
 
-DEFAULT_USER='nitrous'
-
 # Uncomment the following line to use case-sensitive completion.
 CASE_SENSITIVE='true'
 
