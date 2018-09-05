@@ -99,6 +99,9 @@ noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
 
+" disable Ex mode
+noremap Q <NOP>
+
 " don't copy overwritten selection when pasting
 vnoremap p "_dP
 
