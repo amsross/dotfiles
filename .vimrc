@@ -55,6 +55,14 @@ set tabstop=2
 set softtabstop=2
 set expandtab
 
+" https://github.com/reasonml-editor/vim-reason-plus
+let g:LanguageClient_serverCommands = {
+      \ 'reason': ['/Users/aross208/reason-language-server/reason-language-server.exe'],
+      \ }
+
+" enable autocomplete
+let g:deoplete#enable_at_startup = 1
+
 " highlight code issues
 " long lines
 match ErrorMsg '\%>120v.\+'
@@ -111,6 +119,13 @@ au BufRead,BufNewFile Dockerfile* setfiletype Dockerfile
 augroup rainbow_lisp
   autocmd!
   autocmd FileType lisp,clojure,scheme RainbowParentheses
+augroup END
+
+augroup reason_ml
+  autocmd!
+  autocmd FileType reason set runtimepath+=~/.vim/bundle/LanguageClient-neovim
+  autocmd FileType reason nnoremap <Leader>fc :call LanguageClient_textDocument_formatting()<CR>
+  autocmd FileType reason vnoremap <Leader>fc :call LanguageClient_textDocument_rangeFormatting()<CR>
 augroup END
 
 " autoreload ~/.vimrc when changed

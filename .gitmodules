@@ -58,3 +58,9 @@
 [submodule ".vim/bundle/rainbow_parentheses.vim"]
 	path = .vim/bundle/rainbow_parentheses.vim
 	url = https://github.com/junegunn/rainbow_parentheses.vim.git
+[submodule ".vim/bundle/vim-reason-plus"]
+	path = .vim/bundle/vim-reason-plus
+	url = https://github.com/reasonml-editor/vim-reason-plus.git
+[submodule ".vim/bundle/LanguageClient-neovim"]
+	path = .vim/bundle/LanguageClient-neovim
+	url = https://github.com/autozimu/LanguageClient-neovim.git
