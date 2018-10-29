@@ -1,0 +1,1 @@
+alias exity='exit'
