@@ -25,9 +25,6 @@ set binary
 set eol
 set diffopt=vertical
 
-set background=dark
-colo nord
-
 " enable spell checking for git commits
 autocmd FileType gitcommit setlocal spell
 

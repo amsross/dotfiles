@@ -8,33 +8,7 @@ export VIMBLACKLIST='somefakeplugin'
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to 'random', it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME='spaceship'
-
-SPACESHIP_AWS_SHOW=false
-SPACESHIP_BATTERY_SHOW=false
-SPACESHIP_CONDA_SHOW=false
-SPACESHIP_DOCKER_SHOW=false
-SPACESHIP_DOTNET_SHOW=false
-SPACESHIP_ELIXIR_SHOW=false
-SPACESHIP_EMBER_SHOW=false
-SPACESHIP_EXEC_TIME_SHOW=false
-SPACESHIP_GOLANG_SHOW=false
-SPACESHIP_HASKELL_SHOW=false
-SPACESHIP_HG_BRANCH_SHOW=false
-SPACESHIP_HG_SHOW=false
-SPACESHIP_HG_STATUS_SHOW=false
-SPACESHIP_JULIA_SHOW=false
-SPACESHIP_KUBECONTEXT_SHOW=false
-SPACESHIP_PACKAGE_SHOW=false
-SPACESHIP_PHP_SHOW=false
-SPACESHIP_PYENV_SHOW=false
-SPACESHIP_RUBY_SHOW=false
-SPACESHIP_RUST_SHOW=false
-SPACESHIP_SWIFT_SHOW_GLOBAL=false
-SPACESHIP_SWIFT_SHOW_LOCAL=false
-SPACESHIP_VENV_SHOW=false
-SPACESHIP_XCODE_SHOW_GLOBAL=false
-SPACESHIP_XCODE_SHOW_LOCAL=false
+ZSH_THEME='clean'
 
 # Uncomment the following line to use case-sensitive completion.
 CASE_SENSITIVE='true'
@@ -103,14 +77,9 @@ export EDITOR='vim'
 # Example aliases
 # alias zshconfig='mate ~/.zshrc'
 # alias ohmyzsh='mate ~/.oh-my-zsh'
-if which dircolors &> /dev/null; then
-  eval `dircolors $HOME/dotfiles/dircolors/dircolors.nord`
-fi
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-
-source "$HOME/dotfiles/zsh/custom/themes/spaceship.zsh-theme"
 
 # for signing git commits
 export GPG_TTY=$(tty)

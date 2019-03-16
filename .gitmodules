@@ -34,12 +34,6 @@
 [submodule ".vim/bundle/vim-markdown"]
 	path = .vim/bundle/vim-markdown
 	url = https://github.com/plasticboy/vim-markdown.git
-[submodule ".vim/bundle/nord-vim"]
-	path = .vim/bundle/nord-vim
-	url = https://github.com/arcticicestudio/nord-vim.git
-[submodule ".tmux/themes/nord-tmux"]
-	path = .tmux/themes/nord-tmux
-	url = https://github.com/arcticicestudio/nord-tmux.git
 [submodule ".vim/bundle/vim-cljfmt"]
 	path = .vim/bundle/vim-cljfmt
 	url = https://github.com/venantius/vim-cljfmt.git
