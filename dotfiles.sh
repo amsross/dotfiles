@@ -38,5 +38,3 @@ load_all aliases
 #echo ""
 #echo "loading completions"
 load_all completions
-
-#echo ""
