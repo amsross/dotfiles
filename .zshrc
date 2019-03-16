@@ -48,7 +48,7 @@ ZSH_CUSTOM=$HOME/dotfiles/zsh/custom
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git extract lein npm tmux docker docker-compose nvm)
+plugins=(git docker docker-compose)
 
 # User configuration
 ZSH_TMUX_AUTOSTART='false'
@@ -77,9 +77,6 @@ export EDITOR='vim'
 # Example aliases
 # alias zshconfig='mate ~/.zshrc'
 # alias ohmyzsh='mate ~/.oh-my-zsh'
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
 # for signing git commits
 export GPG_TTY=$(tty)
