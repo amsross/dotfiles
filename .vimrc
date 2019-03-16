@@ -28,13 +28,6 @@ set diffopt=vertical
 set background=dark
 colo nord
 
-" enable powerline
-if executable("powerline")
-  set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim/
-  let g:Powerline_symbols = 'fancy'
-  set fillchars+=stl:\ ,stlnc:\
-endif
-
 " enable spell checking for git commits
 autocmd FileType gitcommit setlocal spell
 

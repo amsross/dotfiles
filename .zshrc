@@ -3,7 +3,6 @@ export LANG=en_US.UTF-8
 export TERM=xterm-256color
 export ZSH=$HOME/.oh-my-zsh
 export VIMBLACKLIST='somefakeplugin'
-export POWERLINE_CONFIG_PATHS=$HOME/.vim/bundle/powerline/powerline/config_files:$HOME/dotfiles/powerline
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -107,9 +106,6 @@ export EDITOR='vim'
 if which dircolors &> /dev/null; then
   eval `dircolors $HOME/dotfiles/dircolors/dircolors.nord`
 fi
-# if which powerline &> /dev/null; then
-#   . ~/.vim/bundle/powerline/powerline/bindings/zsh/powerline.zsh
-# fi
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
