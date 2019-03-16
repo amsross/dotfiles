@@ -7,9 +7,6 @@
 [submodule "zsh/oh-my-zsh"]
 	path = zsh/oh-my-zsh
 	url = https://github.com/robbyrussell/oh-my-zsh.git
-[submodule ".vim/bundle/editorconfig-vim"]
-	path = .vim/bundle/editorconfig-vim
-	url = https://github.com/editorconfig/editorconfig-vim.git
 [submodule ".vim/bundle/powerline"]
 	path = .vim/bundle/powerline
 	url = https://github.com/powerline/powerline.git
