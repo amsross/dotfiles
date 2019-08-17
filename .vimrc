@@ -25,6 +25,9 @@ set binary
 set eol
 set diffopt=vertical
 
+set background=dark
+colo slate
+
 " enable spell checking for git commits
 autocmd FileType gitcommit setlocal spell
 
@@ -47,7 +50,7 @@ set expandtab
 
 " https://github.com/reasonml-editor/vim-reason-plus
 let g:LanguageClient_serverCommands = {
-      \ 'reason': ['/Users/aross208/reason-language-server/reason-language-server.exe'],
+      \ 'reason': ['~/reason-language-server/reason-language-server.exe'],
       \ }
 
 " enable autocomplete
@@ -67,13 +70,6 @@ nnoremap <Leader>es :Se<CR>
 " in vertical split at directory of current file
 nnoremap <Leader>ev :Vex<CR>
 
-" clojure/vim-fireplace stuff
-nnoremap <Leader>fr :Require<CR>
-nnoremap <Leader>fe :Eval<CR>
-vnoremap <Leader>fe :Eval<CR>
-nnoremap <Leader>fl :Last<CR>
-nnoremap <Leader>fc :Cljfmt<CR>
-
 " diff stuff
 nnoremap <Leader>dp :diffput<CR>
 vnoremap <Leader>dp :diffput<CR>
@@ -84,7 +80,24 @@ nnoremap <Leader>du :diffupdate<CR>
 " git/vim-figutive stuff
 nnoremap <Leader>gfs :Gwrite<CR>
 
+nnoremap <Leader>fc gg=G``z.
+
 nnoremap <Leader>p :CtrlP<CR>
+
+" next error
+nnoremap ]e :cn<CR>
+nnoremap <Leader>cn :cn<CR>
+" previous error
+nnoremap [e :cp<CR>
+nnoremap <Leader>cp :cp<CR>
+" open quickfix window
+nnoremap <Leader>cw :cw<CR>
+" close quickfix window
+nnoremap <Leader>cc :cclose<CR>
+
+" location list movement
+nnoremap <Leader>ln :lnext<CR>
+nnoremap <Leader>lp :lprevious<CR>
 
 " buffer stuff
 " close all buffers
@@ -109,17 +122,44 @@ au BufRead,BufNewFile Dockerfile* setfiletype Dockerfile
 augroup rainbow_lisp
   autocmd!
   autocmd FileType lisp,clojure,scheme RainbowParentheses
+  " clojure/vim-fireplace stuff
+  autocmd FileType clojure nnoremap <Leader>ft :RunTests<CR>
+  " nnoremap <Leader>ft :call fireplace#session_eval('(clojure.test/run-tests (symbol (str (clojure.string/replace (ns-name *ns*) #"-test$" "") "-test")))')<CR>
+  autocmd FileType clojure nnoremap <Leader>fr :Require<CR>
+  autocmd FileType clojure nnoremap <Leader>fe :Eval<CR>
+  autocmd FileType clojure vnoremap <Leader>fe :Eval<CR>
+  autocmd FileType clojure nnoremap <Leader>fl :Last<CR>
+  autocmd FileType clojure nnoremap <Leader>fc :Cljfmt<CR>
+augroup END
+
+augroup markdown
+  autocmd!
+  autocmd FileType markdown set spell
 augroup END
 
 augroup reason_ml
   autocmd!
+  autocmd FileType reason let g:ctrlp_custom_ignore = $ctrlp_custom_ignore . 'lib/[jb]s'
   autocmd FileType reason set runtimepath+=~/.vim/bundle/LanguageClient-neovim
-  autocmd FileType reason nnoremap <Leader>fc :call LanguageClient_textDocument_formatting()<CR>
-  autocmd FileType reason vnoremap <Leader>fc :call LanguageClient_textDocument_rangeFormatting()<CR>
 augroup END
+
+function LC_maps()
+  if has_key(g:LanguageClient_serverCommands, &filetype)
+    set completefunc=LanguageClient#complete
+    set formatexpr=LanguageClient#textDocument_rangeFormatting_sync()
+    nnoremap <Leader>fr :call LanguageClient_textDocument_references()<CR>
+    nnoremap <Leader>fc :call LanguageClient_textDocument_formatting()<CR>
+    nnoremap <Leader>fh :call LanguageClient_textDocument_hover()<CR>
+    vnoremap <Leader>fh :call LanguageClient_textDocument_hover()<CR>
+    nnoremap <Leader>fd :call LanguageClient_textDocument_definition()<CR>
+    vnoremap <Leader>fd :call LanguageClient_textDocument_definition()<CR>
+  endif
+endfunction
+
+autocmd FileType * call LC_maps()
 
 " autoreload ~/.vimrc when changed
 augroup reload_vimrc " {
-	autocmd!
-	autocmd BufWritePost $MYVIMRC source $MYVIMRC
+  autocmd!
+  autocmd BufWritePost $MYVIMRC source $MYVIMRC
 augroup END " }
