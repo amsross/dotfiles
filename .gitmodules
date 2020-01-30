@@ -61,3 +61,9 @@
 [submodule ".vim/bundle/fzf.vim"]
 	path = .vim/bundle/fzf.vim
 	url = https://github.com/junegunn/fzf.vim.git
+[submodule ".vim/bundle/vim-hub-neovim-rpc"]
+	path = .vim/bundle/vim-hub-neovim-rpc
+	url = http://github.com/roxma/vim-hug-neovim-rpc.git
+[submodule ".vim/bundle/nvim-yarp"]
+	path = .vim/bundle/nvim-yarp
+	url = http://github.com/roxma/nvim-yarp.git
