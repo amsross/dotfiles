@@ -58,3 +58,6 @@
 [submodule ".vim/bundle/cypher-vim-syntax"]
 	path = .vim/bundle/cypher-vim-syntax
 	url = https://github.com/neo4j-contrib/cypher-vim-syntax.git
+[submodule ".vim/bundle/fzf.vim"]
+	path = .vim/bundle/fzf.vim
+	url = https://github.com/junegunn/fzf.vim.git

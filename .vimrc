@@ -21,6 +21,9 @@ let g:vim_better_default_tabs_as_spaces=1
 " so they can be overridden if necessary
 runtime! plugin/default.vim
 
+" fzf
+set rtp+=/usr/local/opt/fzf
+
 set binary
 set eol
 set diffopt=vertical
@@ -147,6 +150,8 @@ function LC_maps()
   if has_key(g:LanguageClient_serverCommands, &filetype)
     set completefunc=LanguageClient#complete
     set formatexpr=LanguageClient#textDocument_rangeFormatting_sync()
+    let g:LanguageClient_diagnosticsList="Quickfix"
+    let g:LanguageClient_selectionUI="fzf"
     nnoremap <Leader>fr :call LanguageClient_textDocument_references()<CR>
     nnoremap <Leader>fc :call LanguageClient_textDocument_formatting()<CR>
     nnoremap <Leader>fh :call LanguageClient_textDocument_hover()<CR>
