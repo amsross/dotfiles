@@ -156,6 +156,8 @@ function LC_maps()
     nnoremap <Leader>fc :call LanguageClient_textDocument_formatting()<CR>
     nnoremap <Leader>fh :call LanguageClient_textDocument_hover()<CR>
     vnoremap <Leader>fh :call LanguageClient_textDocument_hover()<CR>
+    nnoremap <Leader>fp :pc<CR>
+    vnoremap <Leader>fp :pc<CR>
     nnoremap <Leader>fd :call LanguageClient_textDocument_definition()<CR>
     vnoremap <Leader>fd :call LanguageClient_textDocument_definition()<CR>
   endif
