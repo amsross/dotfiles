@@ -15,8 +15,8 @@ Session.vim
 Thumbs.db
 bower_components
 coverage
+doc/tags
 foo.*
 foo/
 node_modules
 secrets.js
-doc/tags
