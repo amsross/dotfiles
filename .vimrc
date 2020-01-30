@@ -108,10 +108,10 @@ nnoremap <Leader>bx :%bw<CR>
 nnoremap <Leader>bb :buffers<CR>
 
 " no more arrow keys <gasp>
-noremap <Up> <NOP>
-noremap <Down> <NOP>
-noremap <Left> <NOP>
-noremap <Right> <NOP>
+noremap <Up> :GitGutterPrevHunk<CR>
+noremap <Down> :GitGutterNextHunk<CR>
+noremap <Left> :bprevious<CR>
+noremap <Right> :bnext<CR>
 
 " disable Ex mode
 noremap Q <NOP>
