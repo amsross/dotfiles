@@ -1,8 +1,43 @@
+" load all the plugins
+call plug#begin('~/.vim/plugged')
+
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
+
+Plug 'Shougo/deoplete.nvim'
+Plug 'airblade/vim-gitgutter'
+Plug 'jremmen/vim-ripgrep'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+Plug 'kien/ctrlp.vim'
+Plug 'liuchengxu/vim-better-default'
+Plug 'roxma/nvim-yarp'
+Plug 'roxma/vim-hug-neovim-rpc'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
+
+Plug 'guns/vim-clojure-static', { 'for': 'clojure' }
+Plug 'junegunn/rainbow_parentheses.vim', { 'for': 'clojure' }
+Plug 'tpope/vim-classpath', { 'for': 'clojure' }
+Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+Plug 'venantius/vim-cljfmt', { 'for': 'clojure' }
+
+Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
+
+Plug 'reasonml-editor/vim-reason-plus', { 'for': 'reason' }
+
+Plug 'jparise/vim-graphql', { 'for': ['javascript', 'graphql'] }
+Plug 'mxw/vim-jsx', { 'for': 'javascript' }
+Plug 'neo4j-contrib/cypher-vim-syntax', { 'for': ['javascript', 'cypher'] }
+Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+
+call plug#end()
+
 let mapleader = "\<Space>"
 let maplocalleader = "\<Space>"
-
-" load all the plugins
-execute pathogen#infect()
 
 let g:netrw_list_hide='.*\.swp$,.*\.un~,\.git/*'
 let g:jsx_ext_required = 0
