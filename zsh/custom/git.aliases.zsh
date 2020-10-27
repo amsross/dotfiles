@@ -28,3 +28,6 @@ alias gs='git status'
 alias gds="git diff --staged"
 alias gdws="git diff --word-diff --staged"
 alias gdn="git diff --name-only" # vi `gdn` to edit changed files
+alias gdns="git diff --name-only --staged" # vi `gdn` to edit changed files
+alias gpup='git push origin $(git_current_branch)'
+alias gplup='git pull origin $(git_current_branch)'
