@@ -11,6 +11,7 @@
 .DS_Store
 .env
 .jekyll-metadata
+.npmrc
 Session.vim
 Thumbs.db
 bower_components
@@ -18,5 +19,6 @@ coverage
 doc/tags
 foo.*
 foo/
+jsconfig.json
 node_modules
 secrets.js
