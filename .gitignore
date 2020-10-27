@@ -3,5 +3,7 @@
 *~
 .vim/.netrwhist
 .vim/plugged
+.vim/sessions
 .vim/spell
 .vim/undodir
+.vim/view
