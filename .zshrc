@@ -80,5 +80,3 @@ export EDITOR='vim'
 
 # for signing git commits
 export GPG_TTY=$(tty)
-
-eval "$(fnm env --multi)"

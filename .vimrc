@@ -2,22 +2,27 @@
 call plug#begin('~/.vim/plugged')
 
 Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
+      \ 'branch': 'next',
+      \ 'do': 'bash install.sh',
+      \ }
+
+Plug 'haishanh/night-owl.vim'
 
 Plug 'Shougo/deoplete.nvim'
 Plug 'airblade/vim-gitgutter'
+Plug 'dense-analysis/ale'
 Plug 'jremmen/vim-ripgrep'
-Plug 'junegunn/fzf'
+Plug 'junegunn/fzf', { 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
-Plug 'kien/ctrlp.vim'
 Plug 'liuchengxu/vim-better-default'
 Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
+
+Plug 'rust-lang/rust.vim', { 'for': 'rust' }
+Plug 'tpope/vim-jdaddy', { 'for': ['json', 'javascript'] }
 
 Plug 'guns/vim-clojure-static', { 'for': 'clojure' }
 Plug 'junegunn/rainbow_parentheses.vim', { 'for': 'clojure' }
@@ -43,18 +48,9 @@ let g:netrw_list_hide='.*\.swp$,.*\.un~,\.git/*'
 let g:jsx_ext_required = 0
 let g:github_enterprise_urls = ['https://github.comcast.com']
 
-let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_map = '<C-P>'
-let g:ctrlp_show_hidden=1
-let g:ctrlp_custom_ignore = 'node_modules\|\.git\/\|cache\|**/bower_components'
-
 " https://github.com/liuchengxu/vim-better-default
 let g:vim_better_default_persistent_undo=1
 let g:vim_better_default_tabs_as_spaces=1
-
-" execute all of the plugins
-" so they can be overridden if necessary
-runtime! plugin/default.vim
 
 " fzf
 set rtp+=/usr/local/opt/fzf
@@ -63,8 +59,8 @@ set binary
 set eol
 set diffopt=vertical
 
-set background=dark
-colo slate
+" set background=dark
+colo night-owl
 
 " enable spell checking for git commits
 autocmd FileType gitcommit setlocal spell
@@ -76,23 +72,37 @@ autocmd QuickFixCmdPost *grep* cwindow
 autocmd BufWritePost * GitGutter
 
 set conceallevel=2
-
 set linebreak
 set path=.,,*
-set runtimepath^=~/.vim/bundle/ctrlp.vim
 set wildignore+=*/tmp/*,*.swp,*.un~,*/vendor/*,*/cache/*,*/node_modules/*,.git/*
-set shiftwidth=2
-set tabstop=2
-set softtabstop=2
-set expandtab
+
+let g:ale_javascript_eslint_suppress_missing_config = 1
+let g:ale_fixers = {
+\ '*': ['remove_trailing_lines', 'trim_whitespace'],
+\ 'xml': ['xmllint'],
+\ 'json': ['jq'],
+\ 'sh': ['shfmt'],
+\ 'javascript': ['eslint', 'standard'],
+\ 'javascript.jsx': ['eslint', 'standard'],
+\ }
 
 " https://github.com/reasonml-editor/vim-reason-plus
 let g:LanguageClient_serverCommands = {
-      \ 'reason': ['~/reason-language-server/reason-language-server.exe'],
+      \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
+      \ 'reason': ['~/reason-language-server/reason-language-server@1.7.8'],
+      \ 'javascript': ['javascript-typescript-stdio'],
+      \ 'javascript.jsx': ['javascript-typescript-stdio'],
+      \ }
+let g:LanguageClient_rootMarkers = {
+      \ 'javascript': ['jsconfig.json'],
+      \ 'javascript.jsx': ['jsconfig.json'],
       \ }
 
 " enable autocomplete
 let g:deoplete#enable_at_startup = 1
+
+" close the autocomplete preview buffer on selection
+autocmd CompleteDone * pclose
 
 " highlight code issues
 " long lines
@@ -102,25 +112,19 @@ match ErrorMsg '\s\+$'
 
 " file explorer stuff
 " at directory of current file
-nnoremap <Leader>ee :Ex<CR>
+nnoremap <Leader>ee :Explore<CR>
 " in split at directory of current file
-nnoremap <Leader>es :Se<CR>
+nnoremap <Leader>es :Sexplore<CR>
 " in vertical split at directory of current file
-nnoremap <Leader>ev :Vex<CR>
-
-" diff stuff
-nnoremap <Leader>dp :diffput<CR>
-vnoremap <Leader>dp :diffput<CR>
-nnoremap <Leader>dg :diffget<CR>
-vnoremap <Leader>dg :diffget<CR>
-nnoremap <Leader>du :diffupdate<CR>
+nnoremap <Leader>ev :Vexplore<CR>
 
 " git/vim-figutive stuff
 nnoremap <Leader>gfs :Gwrite<CR>
 
-nnoremap <Leader>fc gg=G``z.
+" nnoremap <Leader>fc gg=G``z.
 
-nnoremap <Leader>p :CtrlP<CR>
+" nnoremap <Leader>p :CtrlP<CR>
+nnoremap <Leader>p :Files<CR>
 
 " next error
 nnoremap ]e :cn<CR>
@@ -134,19 +138,24 @@ nnoremap <Leader>cw :cw<CR>
 nnoremap <Leader>cc :cclose<CR>
 
 " location list movement
+nnoremap <Leader>ll :lopen<CR>
+nnoremap <Leader>lc :lclose<CR>
 nnoremap <Leader>ln :lnext<CR>
 nnoremap <Leader>lp :lprevious<CR>
 
 " buffer stuff
 " close all buffers
-nnoremap <Leader>bx :%bw<CR>
+" nnoremap <Leader>bx :%bw<CR>
 nnoremap <Leader>bb :buffers<CR>
 
 " no more arrow keys <gasp>
 noremap <Up> :GitGutterPrevHunk<CR>
 noremap <Down> :GitGutterNextHunk<CR>
-noremap <Left> :bprevious<CR>
-noremap <Right> :bnext<CR>
+noremap <Left> <Plug>(ale_previous_wrap)
+noremap <Right> <Plug>(ale_next_wrap)
+
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
 " disable Ex mode
 noremap Q <NOP>
@@ -155,44 +164,24 @@ noremap Q <NOP>
 vnoremap p "_dP
 
 au BufRead,BufNewFile Dockerfile* setfiletype Dockerfile
-
-" Activation based on file type
-augroup rainbow_lisp
-  autocmd!
-  autocmd FileType lisp,clojure,scheme RainbowParentheses
-  " clojure/vim-fireplace stuff
-  autocmd FileType clojure nnoremap <Leader>ft :RunTests<CR>
-  " nnoremap <Leader>ft :call fireplace#session_eval('(clojure.test/run-tests (symbol (str (clojure.string/replace (ns-name *ns*) #"-test$" "") "-test")))')<CR>
-  autocmd FileType clojure nnoremap <Leader>fr :Require<CR>
-  autocmd FileType clojure nnoremap <Leader>fe :Eval<CR>
-  autocmd FileType clojure vnoremap <Leader>fe :Eval<CR>
-  autocmd FileType clojure nnoremap <Leader>fl :Last<CR>
-  autocmd FileType clojure nnoremap <Leader>fc :Cljfmt<CR>
-augroup END
-
-augroup markdown
-  autocmd!
-  autocmd FileType markdown set spell
-augroup END
-
-augroup reason_ml
-  autocmd!
-  autocmd FileType reason let g:ctrlp_custom_ignore = $ctrlp_custom_ignore . 'lib/[jb]s'
-  autocmd FileType reason set runtimepath+=~/.vim/bundle/LanguageClient-neovim
-augroup END
+au BufRead,BufNewFile *\.json\.[0-9]\\\{4\}-[0-9]\\\{2\}-[0-9]\\\{2\}T[0-9]\\\{2\}:[0-9]\\\{2\}:[0-9]\\\{2\}\.[0-9]\\\{3\}Z setfiletype json
+au BufRead,BufNewFile *\.xml\.[0-9]\\\{4\}-[0-9]\\\{2\}-[0-9]\\\{2\}T[0-9]\\\{2\}:[0-9]\\\{2\}:[0-9]\\\{2\}\.[0-9]\\\{3\}Z setfiletype xml
 
 function LC_maps()
   if has_key(g:LanguageClient_serverCommands, &filetype)
+    " set omnifunc=LanguageClient#complete
     set completefunc=LanguageClient#complete
     set formatexpr=LanguageClient#textDocument_rangeFormatting_sync()
-    let g:LanguageClient_diagnosticsList="Quickfix"
-    let g:LanguageClient_selectionUI="fzf"
+    let g:LanguageClient_diagnosticsList="Location"
     nnoremap <Leader>fr :call LanguageClient_textDocument_references()<CR>
+    vnoremap <Leader>fr :call LanguageClient_textDocument_references()<CR>
     nnoremap <Leader>fc :call LanguageClient_textDocument_formatting()<CR>
     nnoremap <Leader>fh :call LanguageClient_textDocument_hover()<CR>
     vnoremap <Leader>fh :call LanguageClient_textDocument_hover()<CR>
-    nnoremap <Leader>fp :pc<CR>
-    vnoremap <Leader>fp :pc<CR>
+    nnoremap <Leader>fp :call popup_clear()<CR>:pc<CR>
+    vnoremap <Leader>fp :call popup_clear()<CR>:pc<CR>
+    nnoremap <Leader>fe :call LanguageClient#explainErrorAtPoint()<CR>
+    vnoremap <Leader>fe :call LanguageClient#explainErrorAtPoint()<CR>
     nnoremap <Leader>fd :call LanguageClient_textDocument_definition()<CR>
     vnoremap <Leader>fd :call LanguageClient_textDocument_definition()<CR>
   endif
@@ -200,8 +189,57 @@ endfunction
 
 autocmd FileType * call LC_maps()
 
+" augroup markdown
+"   autocmd!
+"   autocmd FileType markdown set spell
+" augroup END
+
+augroup quickfix
+  autocmd!
+  autocmd FileType qf setlocal wrap
+augroup END
+
+augroup json
+  autocmd!
+  autocmd FileType json nnoremap <Leader>fc :ALEFix<CR>
+augroup END
+
+augroup xml
+  autocmd!
+  autocmd FileType xml nnoremap <Leader>fc :ALEFix<CR>
+augroup END
+
+augroup javascript
+  autocmd!
+  autocmd FileType javascript nnoremap <Leader>fc :ALEFix<CR>
+  autocmd FileType javascript.jsx nnoremap <Leader>fc :ALEFix<CR>
+augroup END
+
+augroup rust
+  autocmd!
+  autocmd FileType rust let g:autofmt_autosave = 1
+  autocmd FileType rust nnoremap <Leader>fc :RustFmt<CR>
+augroup END
+
+augroup reason_ml
+  autocmd!
+  autocmd FileType reason set runtimepath+=~/.vim/bundle/LanguageClient-neovim
+augroup END
+
 " autoreload ~/.vimrc when changed
 augroup reload_vimrc " {
   autocmd!
   autocmd BufWritePost $MYVIMRC source $MYVIMRC
 augroup END " }
+
+" allow cevim-better-default settings to be overridden
+runtime! plugin/default.vim
+
+set shiftwidth=2
+set tabstop=2
+set softtabstop=2
+set expandtab
+
+" https://vim.fandom.com/wiki/Xterm256_color_names_for_console_Vim
+hi Pmenu ctermfg=0 ctermbg=DarkGrey
+hi PmenuSel ctermfg=0 ctermbg=230
