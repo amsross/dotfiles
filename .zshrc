@@ -48,7 +48,7 @@ ZSH_CUSTOM=$HOME/dotfiles/zsh/custom
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(vi-mode git tmux docker docker-compose)
+plugins=(vi-mode git tmux docker docker-compose fzf)
 
 # User configuration
 ZSH_TMUX_AUTOSTART='false'

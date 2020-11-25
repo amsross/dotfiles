@@ -10,4 +10,3 @@ alias ffg="git log --color=always --oneline --decorate | fzf --ansi --multi --pr
 eval "$(opam env)"
 eval "$(fnm env --multi)"
 source $HOME/.cargo/env
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
