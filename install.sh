@@ -1,5 +1,13 @@
 path="$HOME/dotfiles"
 
+# install brew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+brew install pgp fzf rg tmux fnm jq bat
+fnm install v14
+fnm install v15
+fnm alias v14 fermium
+fnm use fermium
+
 if ! grep -q "source $path/dotfiles.sh" $HOME/.bashrc;
 then
 	echo "" >> $HOME/.bashrc
