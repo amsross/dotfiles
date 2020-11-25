@@ -7,6 +7,4 @@ export FZF_DEFAULT_OPTS="--multi --height 75% --min-height 25 --info inline --bo
 alias fff="fzf --preview 'bat --style=numbers --color=always {+} | head -100'"
 alias ffg="git log --color=always --oneline --decorate | fzf --ansi --multi --preview 'git show --pretty=short --show-signature {+1} --color=always'"
 
-eval "$(opam env)"
 eval "$(fnm env)"
-source $HOME/.cargo/env
