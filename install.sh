@@ -2,7 +2,8 @@ path="$HOME/dotfiles"
 
 # install brew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-brew install pgp fzf rg tmux fnm jq bat
+brew install pgp fzf rg tmux fnm jq bat vim
+python3 -m pip install neovim
 fnm install v14
 fnm install v15
 fnm alias v14 fermium
