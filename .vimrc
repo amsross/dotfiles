@@ -32,7 +32,10 @@ Plug 'venantius/vim-cljfmt', { 'for': 'clojure' }
 
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 
-Plug 'reasonml-editor/vim-reason-plus', { 'for': 'reason' }
+Plug 'reasonml-editor/vim-reason-plus', {
+      \ 'for': 'reason',
+      \ 'do': 'curl -LJO https://github.com/jaredly/reason-language-server/releases/latest/download/rls-macos.zip; unzip ~/.vim/plugged/vim-reason-plus/rls-macos.zip',
+      \ }
 
 Plug 'jparise/vim-graphql', { 'for': ['javascript', 'graphql'] }
 Plug 'mxw/vim-jsx', { 'for': 'javascript' }
@@ -89,7 +92,7 @@ let g:ale_fixers = {
 " https://github.com/reasonml-editor/vim-reason-plus
 let g:LanguageClient_serverCommands = {
       \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
-      \ 'reason': ['~/reason-language-server/reason-language-server@1.7.8'],
+      \ 'reason': ['~/.vim/plugged/vim-reason-plus/rls-macos/reason-language-server'],
       \ 'javascript': ['javascript-typescript-stdio'],
       \ 'javascript.jsx': ['javascript-typescript-stdio'],
       \ }
