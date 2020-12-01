@@ -224,7 +224,7 @@ augroup rust
   autocmd FileType rust nnoremap <Leader>fc :RustFmt<CR>
 augroup END
 
-augroup reason_ml
+augroup reasonml
   autocmd!
   autocmd FileType reason set runtimepath+=~/.vim/bundle/LanguageClient-neovim
 augroup END
