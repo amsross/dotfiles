@@ -154,11 +154,13 @@ nnoremap <Leader>bb :buffers<CR>
 " no more arrow keys <gasp>
 noremap <Up> :GitGutterPrevHunk<CR>
 noremap <Down> :GitGutterNextHunk<CR>
-noremap <Left> <Plug>(ale_previous_wrap)
-noremap <Right> <Plug>(ale_next_wrap)
+noremap <Left> :ALEPreviousWrap<CR>
+noremap <Right> :ALENextWrap<CR>
 
-nmap <silent> <C-k> <Plug>(ale_previous_wrap)
-nmap <silent> <C-j> <Plug>(ale_next_wrap)
+nmap <silent> <C-k> :GitGutterPrevHunk<CR>
+nmap <silent> <C-j> :GitGutterNextHunk<CR>
+nmap <silent> <C-h> :ALEPreviousWrap<CR>
+nmap <silent> <C-l> :ALEPreviousWrap<CR>
 
 " disable Ex mode
 noremap Q <NOP>
