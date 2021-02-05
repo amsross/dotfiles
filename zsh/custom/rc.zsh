@@ -2,8 +2,6 @@
 export PATH=$HOME/.fnm:$PATH
 export VAULT_ADDR=https://vault.apa.comcast.net
 
-zvm_after_init_commands+=('[ -f ~/.oh-my-zsh/plugins/fzf/fzf.plugin.zsh ] && source ~/.oh-my-zsh/plugins/fzf/fzf.plugin.zsh')
-
 export FZF_DEFAULT_COMMAND='rg --files --follow'
 export FZF_DEFAULT_OPTS="--multi --height 75% --min-height 25 --info inline --border --preview-window right:60%:border"
 alias fff="fzf --preview 'bat --style=numbers --color=always {+} | head -100'"
