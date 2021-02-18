@@ -62,6 +62,9 @@ set binary
 set eol
 set diffopt=vertical
 
+" https://github.com/airblade/vim-gitgutter#when-signs-take-a-few-seconds-to-appear
+set updatetime=100
+
 " set background=dark
 colo night-owl
 
