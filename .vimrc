@@ -171,6 +171,9 @@ noremap Q <NOP>
 " don't copy overwritten selection when pasting
 vnoremap p "_dP
 
+" dedupe selected range
+command -range Dedupe <line1>,<line2>g/^\(.*\)$\n\1/d
+
 au BufRead,BufNewFile Dockerfile* setfiletype Dockerfile
 au BufRead,BufNewFile *\.json\.[0-9]\\\{4\}-[0-9]\\\{2\}-[0-9]\\\{2\}T[0-9]\\\{2\}:[0-9]\\\{2\}:[0-9]\\\{2\}\.[0-9]\\\{3\}Z setfiletype json
 au BufRead,BufNewFile *\.xml\.[0-9]\\\{4\}-[0-9]\\\{2\}-[0-9]\\\{2\}T[0-9]\\\{2\}:[0-9]\\\{2\}:[0-9]\\\{2\}\.[0-9]\\\{3\}Z setfiletype xml
