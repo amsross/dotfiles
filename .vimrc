@@ -13,14 +13,11 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
-Plug 'tpope/vim-jdaddy', { 'for': ['json', 'javascript'] }
+Plug 'cespare/vim-toml', { 'branch': 'main', 'for': 'toml' }
+Plug 'tpope/vim-jdaddy', { 'for': ['json', 'javascript', 'typescript'] }
+Plug 'junegunn/rainbow_parentheses.vim', { 'for': ['javascript', 'typescript'] }
 
-Plug 'guns/vim-clojure-static', { 'for': 'clojure' }
-Plug 'junegunn/rainbow_parentheses.vim', { 'for': 'clojure' }
-Plug 'tpope/vim-classpath', { 'for': 'clojure' }
-Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
-Plug 'venantius/vim-cljfmt', { 'for': 'clojure' }
-
+Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
@@ -157,12 +154,7 @@ au BufRead,BufNewFile *\.xml\.[0-9]\\\{4\}-[0-9]\\\{2\}-[0-9]\\\{2\}T[0-9]\\\{2\
 augroup rust
   autocmd!
   autocmd FileType rust let g:autofmt_autosave = 1
-  autocmd FileType rust nnoremap <Leader>fc :RustFmt<CR>
-augroup END
-
-augroup reasonml
-  autocmd!
-  autocmd FileType reason set runtimepath+=~/.vim/bundle/LanguageClient-neovim
+  autocmd FileType rust nnoremap <Leader>fc :RustFmt<CR> :update<CR>
 augroup END
 
 " autoreload ~/.vimrc when changed
