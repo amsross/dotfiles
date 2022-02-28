@@ -1,0 +1,29 @@
+{
+  "languageserver": {
+    "reason": {
+      "enable": true,
+      "command": "~/.vim/plugged/vim-reason-plus/rls-macos/reason-language-server",
+      "filetypes": [
+        "reason"
+      ],
+      "settings": {
+        "reason_language_server": {
+          "format_width": 100
+        }
+      }
+    },
+    "rescript": {
+      "enable": true,
+      "module": "~/.vim/plugged/vim-rescript/server/out/server.js",
+      "args": [
+        "--node-ipc"
+      ],
+      "filetypes": [
+        "rescript"
+      ],
+      "rootPatterns": [
+        "bsconfig.json"
+      ]
+    }
+  }
+}

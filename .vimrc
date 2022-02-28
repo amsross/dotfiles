@@ -1,22 +1,13 @@
 " load all the plugins
 call plug#begin('~/.vim/plugged')
 
-Plug 'autozimu/LanguageClient-neovim', {
-      \ 'branch': 'next',
-      \ 'do': 'bash install.sh',
-      \ }
-
 Plug 'sainnhe/sonokai'
 
-Plug 'Shougo/deoplete.nvim'
 Plug 'airblade/vim-gitgutter'
-Plug 'dense-analysis/ale'
 Plug 'jremmen/vim-ripgrep'
 Plug 'junegunn/fzf', { 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 Plug 'liuchengxu/vim-better-default'
-Plug 'roxma/nvim-yarp'
-Plug 'roxma/vim-hug-neovim-rpc'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
@@ -32,6 +23,8 @@ Plug 'venantius/vim-cljfmt', { 'for': 'clojure' }
 
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+Plug 'rescript-lang/vim-rescript', { 'for': 'rescript' }
 Plug 'reasonml-editor/vim-reason-plus', {
       \ 'for': 'reason',
       \ 'do': 'curl -LJO https://github.com/jaredly/reason-language-server/releases/latest/download/rls-macos.zip; unzip ~/.vim/plugged/vim-reason-plus/rls-macos.zip',
@@ -50,6 +43,14 @@ if has("mouse_sgr")
 else
   set ttymouse=xterm2
 end
+
+call coc#add_extension(
+      \ 'coc-eslint',
+      \ 'coc-json',
+      \ 'coc-reason',
+      \ 'coc-rescript',
+      \ 'coc-xml'
+      \)
 
 let mapleader = "\<Space>"
 let maplocalleader = "\<Space>"
@@ -85,31 +86,6 @@ set conceallevel=2
 set linebreak
 set path=.,,*
 set wildignore+=*/tmp/*,*.swp,*.un~,*/vendor/*,*/cache/*,*/node_modules/*,.git/*
-
-let g:ale_javascript_eslint_suppress_missing_config = 1
-let g:ale_fixers = {
-\ '*': ['remove_trailing_lines', 'trim_whitespace'],
-\ 'xml': ['xmllint'],
-\ 'json': ['jq'],
-\ 'sh': ['shfmt'],
-\ 'javascript': ['eslint', 'standard'],
-\ 'javascript.jsx': ['eslint', 'standard'],
-\ }
-
-" https://github.com/reasonml-editor/vim-reason-plus
-let g:LanguageClient_serverCommands = {
-      \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
-      \ 'reason': ['~/.vim/plugged/vim-reason-plus/rls-macos/reason-language-server'],
-      \ 'javascript': ['javascript-typescript-stdio'],
-      \ 'javascript.jsx': ['javascript-typescript-stdio'],
-      \ }
-let g:LanguageClient_rootMarkers = {
-      \ 'javascript': ['jsconfig.json'],
-      \ 'javascript.jsx': ['jsconfig.json'],
-      \ }
-
-" enable autocomplete
-let g:deoplete#enable_at_startup = 1
 
 " close the autocomplete preview buffer on selection
 autocmd CompleteDone * pclose
@@ -161,13 +137,9 @@ nnoremap <Leader>bb :buffers<CR>
 " no more arrow keys <gasp>
 noremap <Up> :GitGutterPrevHunk<CR>
 noremap <Down> :GitGutterNextHunk<CR>
-noremap <Left> :ALEPreviousWrap<CR>
-noremap <Right> :ALENextWrap<CR>
 
 nmap <silent> <C-k> :GitGutterPrevHunk<CR>
 nmap <silent> <C-j> :GitGutterNextHunk<CR>
-nmap <silent> <C-h> :ALEPreviousWrap<CR>
-nmap <silent> <C-l> :ALEPreviousWrap<CR>
 
 " disable Ex mode
 noremap Q <NOP>
@@ -181,54 +153,6 @@ command -range Dedupe <line1>,<line2>g/^\(.*\)$\n\1/d
 au BufRead,BufNewFile Dockerfile* setfiletype Dockerfile
 au BufRead,BufNewFile *\.json\.[0-9]\\\{4\}-[0-9]\\\{2\}-[0-9]\\\{2\}T[0-9]\\\{2\}:[0-9]\\\{2\}:[0-9]\\\{2\}\.[0-9]\\\{3\}Z setfiletype json
 au BufRead,BufNewFile *\.xml\.[0-9]\\\{4\}-[0-9]\\\{2\}-[0-9]\\\{2\}T[0-9]\\\{2\}:[0-9]\\\{2\}:[0-9]\\\{2\}\.[0-9]\\\{3\}Z setfiletype xml
-
-function LC_maps()
-  if has_key(g:LanguageClient_serverCommands, &filetype)
-    " set omnifunc=LanguageClient#complete
-    set completefunc=LanguageClient#complete
-    set formatexpr=LanguageClient#textDocument_rangeFormatting_sync()
-    let g:LanguageClient_diagnosticsList="Location"
-    nnoremap <Leader>fr :call LanguageClient_textDocument_references()<CR>
-    vnoremap <Leader>fr :call LanguageClient_textDocument_references()<CR>
-    nnoremap <Leader>fc :call LanguageClient_textDocument_formatting()<CR>
-    nnoremap <Leader>fh :call LanguageClient_textDocument_hover()<CR>
-    vnoremap <Leader>fh :call LanguageClient_textDocument_hover()<CR>
-    nnoremap <Leader>fp :call popup_clear()<CR>:pc<CR>
-    vnoremap <Leader>fp :call popup_clear()<CR>:pc<CR>
-    nnoremap <Leader>fe :call LanguageClient#explainErrorAtPoint()<CR>
-    vnoremap <Leader>fe :call LanguageClient#explainErrorAtPoint()<CR>
-    nnoremap <Leader>fd :call LanguageClient_textDocument_definition()<CR>
-    vnoremap <Leader>fd :call LanguageClient_textDocument_definition()<CR>
-  endif
-endfunction
-
-autocmd FileType * call LC_maps()
-
-" augroup markdown
-"   autocmd!
-"   autocmd FileType markdown set spell
-" augroup END
-
-augroup quickfix
-  autocmd!
-  autocmd FileType qf setlocal wrap
-augroup END
-
-augroup json
-  autocmd!
-  autocmd FileType json nnoremap <Leader>fc :ALEFix<CR>
-augroup END
-
-augroup xml
-  autocmd!
-  autocmd FileType xml nnoremap <Leader>fc :ALEFix<CR>
-augroup END
-
-augroup javascript
-  autocmd!
-  autocmd FileType javascript nnoremap <Leader>fc :ALEFix<CR>
-  autocmd FileType javascript.jsx nnoremap <Leader>fc :ALEFix<CR>
-augroup END
 
 augroup rust
   autocmd!
