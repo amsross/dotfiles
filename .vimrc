@@ -6,7 +6,7 @@ Plug 'autozimu/LanguageClient-neovim', {
       \ 'do': 'bash install.sh',
       \ }
 
-Plug 'haishanh/night-owl.vim'
+Plug 'sainnhe/sonokai'
 
 Plug 'Shougo/deoplete.nvim'
 Plug 'airblade/vim-gitgutter'
@@ -71,9 +71,6 @@ set diffopt=vertical
 
 " https://github.com/airblade/vim-gitgutter#when-signs-take-a-few-seconds-to-appear
 set updatetime=100
-
-" set background=dark
-colo night-owl
 
 " enable spell checking for git commits
 autocmd FileType gitcommit setlocal spell
@@ -257,6 +254,9 @@ set shiftwidth=2
 set tabstop=2
 set softtabstop=2
 set expandtab
+
+" set background=dark
+colo sonokai
 
 " https://vim.fandom.com/wiki/Xterm256_color_names_for_console_Vim
 hi Pmenu ctermfg=0 ctermbg=DarkGrey
