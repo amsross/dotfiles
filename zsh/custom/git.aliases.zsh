@@ -29,5 +29,11 @@ alias gds="git diff --staged"
 alias gdws="git diff --word-diff --staged"
 alias gdn="git diff --name-only" # vi `gdn` to edit changed files
 alias gdns="git diff --name-only --staged" # vi `gdn` to edit changed files
+alias gdnu="git ls-files --others --exclude-standard --full-name" # vi `gdnu` to edit unstaged files
 alias gpup='git push origin $(git_current_branch)'
 alias gplup='git pull origin $(git_current_branch)'
+
+batdiff() {
+    git diff --name-only --diff-filter=d | xargs bat --diff
+}
+alias gdb=batdiff
