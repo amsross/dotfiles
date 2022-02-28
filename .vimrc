@@ -124,6 +124,7 @@ nnoremap <Leader>gfs :Gwrite<CR>
 " nnoremap <Leader>p :CtrlP<CR>
 nnoremap <Leader>p :Files<CR>
 nnoremap <Leader>r :RG<CR>
+nnoremap <Leader>m :Marks<CR>
 
 " location list movement
 nnoremap <Leader>ll :lopen<CR>
