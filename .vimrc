@@ -44,6 +44,13 @@ Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 
 call plug#end()
 
+"https://stackoverflow.com/questions/7000960/in-vim-why-doesnt-my-mouse-work-past-the-220th-column
+if has("mouse_sgr")
+  set ttymouse=sgr
+else
+  set ttymouse=xterm2
+end
+
 let mapleader = "\<Space>"
 let maplocalleader = "\<Space>"
 
