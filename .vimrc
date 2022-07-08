@@ -2,6 +2,7 @@
 call plug#begin('~/.vim/plugged')
 
 Plug 'sainnhe/sonokai'
+Plug 'morhetz/gruvbox'
 
 Plug 'airblade/vim-gitgutter'
 Plug 'jremmen/vim-ripgrep'
@@ -174,7 +175,7 @@ set norelativenumber
 set number
 
 " set background=dark
-colo sonokai
+colo gruvbox
 
 " " https://vim.fandom.com/wiki/Xterm256_color_names_for_console_Vim
 " hi Pmenu ctermfg=Black ctermbg=DarkGrey ctermul=Yellow
