@@ -6,7 +6,15 @@ is_in_git_repo() {
 }
 
 fzf-down() {
-  fzf --height 50% --min-height 20 --border --bind ctrl-/:toggle-preview "$@"
+  fzf --height 95% --min-height 20 --border --bind ctrl-/:toggle-preview "$@"
+}
+
+fzf-git-diff() {
+  is_in_git_repo || return
+  git -c color.status=always status --short |
+  fzf-down -m --ansi --nth 2..,.. \
+    --preview '(git diff --color=always -- {-1} | sed 1,4d; cat {-1})' |
+  cut -c4- | sed 's/.* -> //'
 }
 
 fzf-git-file() {
@@ -69,6 +77,7 @@ fzf-make-git-binding() {
   eval "bindkey '^g^$2' fzf-git-$1-widget"
 }
 
+fzf-make-git-binding diff d
 fzf-make-git-binding file f
 fzf-make-git-binding branch v
 fzf-make-git-binding tag t

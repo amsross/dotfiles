@@ -4,6 +4,8 @@ call plug#begin('~/.vim/plugged')
 Plug 'sainnhe/sonokai'
 Plug 'morhetz/gruvbox'
 
+Plug 'dense-analysis/ale'
+
 Plug 'airblade/vim-gitgutter'
 Plug 'jremmen/vim-ripgrep'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -13,7 +15,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 
-Plug 'rust-lang/rust.vim', { 'for': 'rust' }
+" Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 Plug 'cespare/vim-toml', { 'branch': 'main', 'for': 'toml' }
 Plug 'tpope/vim-jdaddy', { 'for': ['json', 'javascript', 'typescript'] }
 Plug 'junegunn/rainbow_parentheses.vim', { 'for': ['javascript', 'typescript'] }
@@ -29,9 +31,9 @@ Plug 'reasonml-editor/vim-reason-plus', {
       \ }
 
 Plug 'jparise/vim-graphql', { 'for': ['javascript', 'graphql'] }
-Plug 'mxw/vim-jsx', { 'for': 'javascript' }
+Plug 'mxw/vim-jsx', { 'for': ['javascript', 'typescript'] }
 Plug 'neo4j-contrib/cypher-vim-syntax', { 'for': ['javascript', 'cypher'] }
-Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'typescript'] }
 
 call plug#end()
 
@@ -133,6 +135,12 @@ nnoremap <Leader>lc :lclose<CR>
 nnoremap <Leader>ln :lnext<CR>
 nnoremap <Leader>lp :lprevious<CR>
 
+" quickfix movement
+nnoremap <Leader>cl :copen<CR>
+nnoremap <Leader>cc :cclose<CR>
+nnoremap <Leader>cn :cnext<CR>
+nnoremap <Leader>cp :cprevious<CR>
+
 " buffer stuff
 " close all buffers
 " nnoremap <Leader>bx :%bw<CR>
@@ -150,14 +158,20 @@ vnoremap p "_dP
 " dedupe selected range
 command -range Dedupe <line1>,<line2>g/^\(.*\)$\n\1/d
 
+" clean a WPEFramework log
+" command Clean :silent! %s/:main.bundle.[0-9].[0-9]\+.[0-9]\+-[a-z0-9]\+.js:[0-9,]\+//g | :silent! %s/:main.bundle.[0-9\.-a-z,]\+//g | :silent! %s/ \/usr\/bin\/WPEFramework\[[0-9]\+]\+//g | :silent! %s/ WPE\(Web\|\)Process\[[0-9]\+]//g | :silent! %s/ ResidentApp\[[0-9]\+]//g | :silent! %s/ WPEFramework\[[0-9]\+]//g | :silent! %s/ \[[0-9\:]\{13,13\}\]//g | :silent! %s/  \+/ /g
+command Clean :silent! %s/:main.bundle.[0-9].[0-9]\+.[0-9]\+-[a-z0-9]\+.js:[0-9,]\+//g | :silent! %s/:main.bundle.[0-9\.-a-z,]\+//g | :silent! %s/ \/usr\/bin\/WPEFramework\[[0-9]\+]\+//g | :silent! %s/ WPE\(Web\|\)Process\[[0-9]\+]//g | :silent! %s/ ResidentApp\[[0-9]\+]//g | :silent! %s/ WPEFramework\[[0-9]\+]//g | :silent! %s/  \+/ /g
+
 au BufRead,BufNewFile Dockerfile* setfiletype Dockerfile
 au BufRead,BufNewFile *\.json\.[0-9]\\\{4\}-[0-9]\\\{2\}-[0-9]\\\{2\}T[0-9]\\\{2\}:[0-9]\\\{2\}:[0-9]\\\{2\}\.[0-9]\\\{3\}Z setfiletype json
 au BufRead,BufNewFile *\.xml\.[0-9]\\\{4\}-[0-9]\\\{2\}-[0-9]\\\{2\}T[0-9]\\\{2\}:[0-9]\\\{2\}:[0-9]\\\{2\}\.[0-9]\\\{3\}Z setfiletype xml
 
 augroup rust
   autocmd!
-  autocmd FileType rust let g:autofmt_autosave = 1
-  autocmd FileType rust nnoremap <Leader>fc :RustFmt<CR> :update<CR>
+  autocmd FileType rust let g:rustfmt_autosave = 0
+  autocmd FileType rust let g:rustfmt_emit_files = 1
+  autocmd FileType rust let g:rustfmt_fail_silently = 0
+	autocmd FileType rust nnoremap <Leader>ar :CocCommand rust-analyzer.run<CR>
 augroup END
 
 autocmd FileType xml nnoremap <Leader>fc <Plug>(coc-format)
@@ -360,4 +374,4 @@ nnoremap <silent> <Leader>cj  :<C-u>CocNext<CR>
 " Do default action for previous item.
 nnoremap <silent> <Leader>ck  :<C-u>CocPrev<CR>
 " Resume latest coc list.
-nnoremap <silent> <Leader>cp  :<C-u>CocListResume<CR>
+nnoremap <silent> <Leader>cr  :<C-u>CocListResume<CR>
