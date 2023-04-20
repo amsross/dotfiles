@@ -82,3 +82,5 @@ export EDITOR='vim'
 export GPG_TTY=$(tty)
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+[ -f ~/dotfiles/.fzf.zsh ] && source ~/dotfiles/.fzf.zsh
