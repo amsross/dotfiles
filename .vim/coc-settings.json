@@ -1,20 +1,7 @@
 {
-  "java.enabled": false,
   "rust-analyzer.procMacro.attributes.enable": true,
   "rust-analyzer.procMacro.enable": true,
   "languageserver": {
-    "bash": {
-      "command": "bash-language-server",
-      "args": [
-        "start"
-      ],
-      "filetypes": [
-        "sh"
-      ],
-      "ignoredRootPaths": [
-        "~"
-      ]
-    },
     "reason": {
       "enable": true,
       "command": "~/.vim/plugged/vim-reason-plus/rls-macos/reason-language-server",

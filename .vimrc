@@ -45,9 +45,9 @@ else
 end
 
 call coc#add_extension(
+      \ 'coc-rust-analyzer',
       \ 'coc-eslint',
       \ 'coc-json',
-      \ 'coc-reason',
       \ 'coc-rescript',
       \ 'coc-xml'
       \)
