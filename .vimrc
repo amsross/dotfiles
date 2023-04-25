@@ -45,10 +45,11 @@ else
 end
 
 call coc#add_extension(
-      \ 'coc-rust-analyzer',
       \ 'coc-eslint',
       \ 'coc-json',
+      \ 'coc-tsserver',
       \ 'coc-rescript',
+      \ 'coc-rust-analyzer',
       \ 'coc-xml'
       \)
 
