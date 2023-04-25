@@ -180,8 +180,11 @@ autocmd FileType xml vnoremap <Leader>fc <Plug>(coc-format)
 autocmd FileType rescript nnoremap <Leader>fc :RescriptFormat<CR>
 autocmd FileType rescript vnoremap <Leader>fc :RescriptFormat<CR>
 
-" allow cevim-better-default settings to be overridden
+" allow vim-better-default settings to be overridden
 runtime! plugin/default.vim
+
+" make mouse work on M1/iTerm2
+set ttymouse=sgr
 
 set shiftwidth=2
 set tabstop=2
