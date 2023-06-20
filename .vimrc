@@ -286,6 +286,7 @@ augroup formatters
 	autocmd FileType json vnoremap <silent> <Leader>fc :Format<CR>
 augroup END
 
+set regexpengine=2
 
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
