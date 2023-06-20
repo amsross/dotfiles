@@ -49,8 +49,9 @@ end
 call coc#add_extension(
       \ 'coc-eslint',
       \ 'coc-json',
-      \ 'coc-tsserver',
+      \ 'coc-prettier',
       \ 'coc-rescript',
+      \ 'coc-tsserver',
       \ 'coc-rust-analyzer',
       \ 'coc-xml'
       \)
