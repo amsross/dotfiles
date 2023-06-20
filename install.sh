@@ -2,7 +2,7 @@ path="$HOME/dotfiles"
 
 # install brew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-brew install pgp fzf rg tmux fnm jq bat vim shfmt
+brew install gpg2 fzf rg tmux fnm jq bat vim shfmt
 python3 -m pip install neovim
 npm install --global eslint standard javascript-typescript-langserver
 curl --proto "=https" --tlsv1.2 -sSf https://sh.rustup.rs | sh
