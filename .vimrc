@@ -1,8 +1,6 @@
 " load all the plugins
 call plug#begin('~/.vim/plugged')
 
-Plug 'github/copilot.vim'
-
 Plug 'sainnhe/sonokai'
 Plug 'morhetz/gruvbox'
 
@@ -114,8 +112,6 @@ autocmd CompleteDone * pclose
 match ErrorMsg '\%>120v.\+'
 " whitespace line endings
 match ErrorMsg '\s\+$'
-
-nnoremap <Leader>gcp :Copilot panel<CR>
 
 " file explorer stuff
 " at directory of current file
