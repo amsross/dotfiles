@@ -47,6 +47,6 @@ alias week='date +%V'
 alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);"'
 
 # Disk usage with human sizes and minimal depth
-alias du1='du -h --max-depth=1'
+alias du1='du -h -d 2'
 alias fn='find . -name'
 alias hi='history | tail -20'
