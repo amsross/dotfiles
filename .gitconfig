@@ -23,6 +23,6 @@
 [commit]
   gpgsign = true
 [gpg]
-	program = gpg
+  program = gpg
 [init]
-	defaultBranch = main
+  defaultBranch = main
