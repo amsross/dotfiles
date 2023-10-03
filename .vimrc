@@ -50,7 +50,6 @@ call coc#add_extension(
       \ 'coc-eslint',
       \ 'coc-json',
       \ 'coc-prettier',
-      \ 'coc-rescript',
       \ 'coc-tsserver',
       \ 'coc-rust-analyzer',
       \ 'coc-xml'
