@@ -193,7 +193,7 @@ set ttymouse=sgr
 set shiftwidth=2
 set tabstop=2
 set softtabstop=2
-set norelativenumber
+set relativenumber
 set number
 
 " set background=dark
