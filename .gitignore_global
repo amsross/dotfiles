@@ -7,11 +7,14 @@
 *.tar.gz
 *.un~
 *.zip
+*/prompts/
 *_log
 .DS_Store
 .env
+.eslintcache
 .jekyll-metadata
 .npmrc
+GEMINI.md
 Session.vim
 Thumbs.db
 bower_components

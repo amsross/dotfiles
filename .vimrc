@@ -6,7 +6,7 @@ Plug 'github/copilot.vim'
 Plug 'sainnhe/sonokai'
 Plug 'morhetz/gruvbox'
 
-Plug 'dense-analysis/ale'
+" Plug 'dense-analysis/ale'
 
 Plug 'airblade/vim-gitgutter'
 Plug 'jremmen/vim-ripgrep'
@@ -16,26 +16,41 @@ Plug 'liuchengxu/vim-better-default'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
+Plug 'hashivim/vim-terraform'
 
-" Plug 'rust-lang/rust.vim', { 'for': 'rust' }
+Plug 'rust-lang/rust.vim', {
+      \'for': 'rust',
+      \ 'do': 'rustup component add rust-analyzer',
+      \ }
 Plug 'cespare/vim-toml', { 'branch': 'main', 'for': 'toml' }
 Plug 'tpope/vim-jdaddy', { 'for': ['json', 'javascript', 'typescript'] }
-Plug 'junegunn/rainbow_parentheses.vim', { 'for': ['javascript', 'typescript'] }
+Plug 'junegunn/rainbow_parentheses.vim'
 
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
-Plug 'rescript-lang/vim-rescript', { 'for': 'rescript' }
-Plug 'reasonml-editor/vim-reason-plus', {
-      \ 'for': 'reason',
-      \ 'do': 'curl -LJO https://github.com/jaredly/reason-language-server/releases/latest/download/rls-macos.zip; unzip ~/.vim/plugged/vim-reason-plus/rls-macos.zip',
+Plug 'rescript-lang/vim-rescript', {
+      \ 'do': 'npm install -g @rescript/language-server'
       \ }
+
+" Plug 'reasonml-editor/vim-reason-plus', {
+"       \ 'for': 'reason',
+"       \ 'do': 'curl -LJO https://github.com/jaredly/reason-language-server/releases/latest/download/rls-macos.zip; unzip ~/.vim/plugged/vim-reason-plus/rls-macos.zip',
+"       \ }
 
 Plug 'jparise/vim-graphql', { 'for': ['javascript', 'graphql'] }
 Plug 'mxw/vim-jsx', { 'for': ['javascript', 'typescript'] }
-Plug 'neo4j-contrib/cypher-vim-syntax', { 'for': ['javascript', 'cypher'] }
+" Plug 'neo4j-contrib/cypher-vim-syntax', { 'for': ['javascript', 'cypher'] }
 Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'typescript'] }
+
+" Plug 'nvim-lua/plenary.nvim'
+" Plug 'nvim-telescope/telescope.nvim', { 'branch': '0.1.x' }
+" Plug 'nvim-tree/nvim-web-devicons'
+" Plug 'pwntester/octo.nvim'
+
+" Plug 'ldelossa/litee.nvim'
+" Plug 'ldelossa/gh.nvim'
 
 call plug#end()
 
@@ -47,7 +62,11 @@ else
 end
 
 call coc#add_extension(
+      \ 'coc-go',
+      \ 'coc-deno',
       \ 'coc-eslint',
+      \ 'coc-toml',
+      \ 'coc-jest',
       \ 'coc-json',
       \ 'coc-prettier',
       \ 'coc-tsserver',
@@ -97,6 +116,11 @@ set updatetime=100
 " enable spell checking for git commits
 autocmd FileType gitcommit setlocal spell
 
+augroup rainbow_js
+  autocmd!
+  autocmd FileType javascript,javascript.jsx,typescript RainbowParentheses
+augroup END
+
 " open a cwindow for results whenever grep is run
 autocmd QuickFixCmdPost *grep* cwindow
 
@@ -113,6 +137,13 @@ autocmd CompleteDone * pclose
 match ErrorMsg '\%>120v.\+'
 " whitespace line endings
 match ErrorMsg '\s\+$'
+
+" move current line(s) up one
+nnoremap <Leader>lk :m-2<CR>
+vnoremap <Leader>lk :m-2<CR>gv
+" move current line(s) down one
+nnoremap <Leader>lj :m+1<CR>
+vnoremap <Leader>lj :m+1<CR>gv
 
 nnoremap <Leader>gcp :Copilot panel<CR>
 
@@ -149,7 +180,7 @@ nnoremap <Leader>cp :cprevious<CR>
 " buffer stuff
 " close all buffers
 " nnoremap <Leader>bx :%bw<CR>
-nnoremap <Leader>bb :buffers<CR>
+nnoremap <Leader>bb :Buffers<CR>
 
 nmap <silent> <C-k> :GitGutterPrevHunk<CR>
 nmap <silent> <C-j> :GitGutterNextHunk<CR>
@@ -181,8 +212,6 @@ augroup END
 
 autocmd FileType xml nnoremap <Leader>fc <Plug>(coc-format)
 autocmd FileType xml vnoremap <Leader>fc <Plug>(coc-format)
-autocmd FileType rescript nnoremap <Leader>fc :RescriptFormat<CR>
-autocmd FileType rescript vnoremap <Leader>fc :RescriptFormat<CR>
 
 " allow vim-better-default settings to be overridden
 runtime! plugin/default.vim
@@ -198,6 +227,7 @@ set number
 
 " set background=dark
 colo gruvbox
+let g:gruvbox_contrast_dark = 'hard'
 
 " " https://vim.fandom.com/wiki/Xterm256_color_names_for_console_Vim
 " hi Pmenu ctermfg=Black ctermbg=DarkGrey ctermul=Yellow
@@ -359,6 +389,10 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 
 set statusline=%<%f\ %h%m%r\ %{coc#status()}%{get(b:,'coc_current_function','')}%=%-14.(%l,%c%V%)\ %P
 " set statusline=%<%f\ %h%m%r\ %{coc#status()}%{get(b:,'coc_diagnostic_info',{})}%=%-14.(%l,%c%V%)\ %P
+
+" Mappings for coc-jest
+nnoremap <silent> <Leader>jf :call CocAction('runCommand', 'jest.fileTest', ['%'])<CR>
+nnoremap <silent> <Leader>js :call CocAction('runCommand', 'jest.singleTest')<CR>
 
 " Mappings for CoCList
 " Show all diagnostics.

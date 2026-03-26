@@ -48,10 +48,12 @@ ZSH_CUSTOM=$HOME/dotfiles/zsh/custom
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(vi-mode git tmux fzf)
+plugins=(vi-mode git tmux fzf fnm)
 
 # User configuration
-ZSH_TMUX_AUTOSTART='false'
+ZSH_TMUX_AUTOSTART=true
+VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true
+VI_MODE_SET_CURSOR=true
 
 export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:$PATH
 # export MANPATH='/usr/local/man:$MANPATH'
@@ -83,4 +85,7 @@ export GPG_TTY=$(tty)
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
+export PATH=$(brew --prefix python)/libexec/bin:$PATH
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
