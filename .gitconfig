@@ -23,6 +23,8 @@
   prune = true
 [commit]
   gpgsign = true
+[tag]
+  gpgsign = true
 [gpg]
   program = gpg
 [init]
